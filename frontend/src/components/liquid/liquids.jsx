@@ -2,7 +2,9 @@ import React, {useState, useEffect} from 'react'
 import DailyAmount from './dailyAmount';
 import LiquidForm from './liquidForm';
 import LiquidList from "./liquidList";
+import Cup from './cup';
 import axios from 'axios';
+
 
 export default function Liquids() {
     const [liquids, setLiquids] = useState([]);
@@ -28,6 +30,7 @@ export default function Liquids() {
             <DailyAmount dailyAmount={dailyAmount} />
 			<LiquidForm liquids={liquids} setLiquids={setLiquids} currentUser={currentUser} />
 			<LiquidList liquids={liquids} setLiquids={setLiquids} />
+            <Cup dailyAmount={dailyAmount}/>
         </div>
     )
 }
