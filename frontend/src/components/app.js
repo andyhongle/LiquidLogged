@@ -1,19 +1,13 @@
 import React from 'react';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch } from 'react-router-dom';
+// import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { Switch, Route } from "react-router-dom";
+import Profile from './profile/profile'
 
 const App = () => (
-    <div>
-        <Header />
+    <div>App
         <Switch>
-            <Route exact path="/" component={MainPage} />
-            <Route exact path="/login" component={LoginFormContainer} />
-            <Route exact path="/signup" component={SignupFormContainer} />
-
-            <Route exact path="/liquids" component={LiquidsContainer} />
-            <Route exact path="/profile" component={ProfileContainer} />
+            <Route exact path="/profile" component={Profile} />
         </Switch>
-        <Footer />
     </div>
 );
 
