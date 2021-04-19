@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './normalze.css';
+import './normalize.css';
 
 // We will create this component shortly
 import Root from './components/root';

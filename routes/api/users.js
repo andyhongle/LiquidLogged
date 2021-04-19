@@ -10,21 +10,16 @@ const validateLoginInput = require('../../validation/login');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
-const verifyJWT = (req, res, next) => {
-    const token = req.headers["x-access-token"]
+const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers["Authorization"]
+    const token = authHeader && authHeader.split(' ')[1]
+    if (token == null) return res.sendStatus(401)
 
-    if (!token) {
-        res.send("Need a token")
-    } else {
-        jwt.verify(token, "", (err, decoded) => {
-            if (err) {
-                res.send({Auth: false})
-            } else {
-                req.userId = decoded.id
-                next();
-            }
-        })
-    }
+    jwt.verify(token, keys.secretOrKey, (err, user) => {
+        if (err) return res.sendStatus(403)
+        req.user = user
+        next()
+    })
 }
 
 router.get("/isUserAuth", verifyJWT, (req, res) => {
