@@ -23,7 +23,6 @@ export default function Liquids() {
         setDailyAmount(temp);
     }, [liquids]);
 
-
     return (
         <div className="liquids">
             <DailyAmount dailyAmount={dailyAmount} />
