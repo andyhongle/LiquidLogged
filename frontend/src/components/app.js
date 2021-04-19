@@ -1,7 +1,7 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
-import Liquids from '../components/liquids.jsx';
+import Liquids from '../components/liquid/liquids.jsx';
 
 const App = () => (
     <div>
