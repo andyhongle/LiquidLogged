@@ -10,6 +10,27 @@ const validateLoginInput = require('../../validation/login');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
+const verifyJWT = (req, res, next) => {
+    const token = req.headers["x-access-token"]
+
+    if (!token) {
+        res.send("Need a token")
+    } else {
+        jwt.verify(token, "", (err, decoded) => {
+            if (err) {
+                res.send({Auth: false})
+            } else {
+                req.userId = decoded.id
+                next();
+            }
+        })
+    }
+}
+
+router.get("/isUserAuth", verifyJWT, (req, res) => {
+    res.send("Authentication successful")
+})
+
 router.post("/register", (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -69,7 +90,7 @@ router.post("/login", (req, res) => {
         bcrypt.compare(password, user.password).then(isMatch => {
             if (isMatch) {
                 const payload = { id: user.id, username: user.username };
-                
+
                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                     res.json({
                         success: true,
