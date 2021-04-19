@@ -14,7 +14,6 @@ export default function LiquidList({liquids, setLiquids}) {
 
 
 
-
     const sortByDate = (a, b) => {
         return a.datetime - b.datetime;
     }

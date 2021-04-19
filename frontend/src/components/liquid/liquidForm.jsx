@@ -30,6 +30,8 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
     amount.current.value = 0;
   }
 
+  
+
   return (
     <form className="liquid-form" onSubmit={AddLiquid}>
       <div className="form-inner">
