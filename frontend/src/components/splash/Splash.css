@@ -1,0 +1,24 @@
+
+.splash-container {
+  background:#150e56;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-left: 20%;
+}
+
+.splash-container > h1 {
+  color: white;
+  font-size: 2rem;
+  margin-top: 50px;
+  display: flex;
+  position: sticky;
+}
+
+.splash-container > p {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 25px;
+}
