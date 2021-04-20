@@ -208,14 +208,27 @@ input, button {
 }
 
 .level {
+	max-height: 100%;
 	width:100%;
 	background-color: thistle;
 	position: absolute;
 	bottom: 0;
 	border: none;
-	/* border: 6px solid rgb(194, 216, 216);  */
-	border-radius: 0 0 28px 28px;
+	border-radius: 0 0 27px 27px;
+	transition: .8s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
