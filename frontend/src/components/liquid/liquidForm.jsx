@@ -3,26 +3,24 @@ import axios from 'axios';
 
 export default function LiquidForm({liquids,currentUser, setLiquids}) {
     const type = useRef(null);
-    const amount = useRef(null);
+    const amount = useRef(0);
 
   const AddLiquid = e => {
     e.preventDefault();
 
     let newLiquid = {
-      "type": type.current.value,
-      "amount": amount.current.value,
-      "user": currentUser,
-      // id just for testing, will be deleted
-      "id": liquids.length
+      type: type.current.value,
+      amount: amount.current.value,
+      user: currentUser,
     }
 
     let allLiquids = [...liquids, newLiquid]
     
     setLiquids(allLiquids);
 
-    axios.post('/api/liquids/create', newLiquid)
-        .then(res => console.log(res.data))
-        .catch((error) => {console.log(error)});
+    // axios.post('/api/liquids', newLiquid)
+    //     .then(res => console.log(res.data))
+    //     .catch((error) => {console.log(error)});
 
     type.current.value = "";
     amount.current.value = 0;
