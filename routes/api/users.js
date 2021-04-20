@@ -8,29 +8,8 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
-const verifyJWT = (req, res, next) => {
-    const token = req.headers["x-access-token"]
-
-    if (!token) {
-        res.send("Need a token")
-    } else {
-        jwt.verify(token, "", (err, decoded) => {
-            if (err) {
-                res.send({Auth: false})
-            } else {
-                req.userId = decoded.id
-                next();
-            }
-        })
-    }
-}
-
-router.get("/isUserAuth", verifyJWT, (req, res) => {
-    res.send("Authentication successful")
-})
-
+// /api/users/register
 router.post("/register", (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -71,6 +50,7 @@ router.post("/register", (req, res) => {
     });
 });
 
+// /api/users/login
 router.post("/login", (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
 
