@@ -29,7 +29,7 @@ require('./config/passport')(passport);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.get("/", (req, res) => res.send("Hello World"));
+app.get("/", (req, res) => res.send("Hello World"));
 
 app.use("/api/users", users);
 app.use("/api/liquids", liquids);

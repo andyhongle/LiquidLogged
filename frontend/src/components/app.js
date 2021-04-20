@@ -4,18 +4,15 @@ import { Switch } from 'react-router-dom';
 
 const App = () => (
     <div>
+        <Modal />
         <Header />
-        <Switch>
-            <Route exact path="/" component={MainPage} />
-            <Route exact path="/login" component={LoginFormContainer} />
-            <Route exact path="/signup" component={SignupFormContainer} />
-
-            <Route exact path="/liquids" component={LiquidsContainer} />
-            <Route exact path="/profile" component={ProfileContainer} />
-        </Switch>
+        <AuthRoute exact path="/" component={SplashPage} />
+        <ProtectedRoute exact path="/liquids" component={LiquidsContainer} />
+        <ProtectedRoute exact path="/user/:userId" component={ProfileContainer} />
         <Footer />
     </div>
 );
+
 
 
 
