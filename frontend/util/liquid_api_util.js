@@ -7,5 +7,5 @@ export const writeLiquid = data => {
 }
 
 export const getUserLiquids = id => {
-    return axios.get(`/api/tweets/user/${id}`)
+    return axios.get(`/api/liquids/user/${id}`)
 };
