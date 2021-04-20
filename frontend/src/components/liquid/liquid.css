@@ -68,7 +68,7 @@ input, button {
 	right: 0px;
 	bottom: 0px;
 	z-index: 0;
-	background-image: linear-gradient(to right,#FFCE00, #FE4880);
+	background-image: linear-gradient(to right,#FFCE00, #43e7df);
 	border-radius: 10px;
 	transition: 0.2s;
 }
@@ -110,13 +110,13 @@ input, button {
 .form-inner input[type="submit"] {
     border-radius: 0px 8px 8px 0px;
 	cursor: pointer;
-	background-image: linear-gradient(to right, #FFCE00 50%, #FFCE00 50%, #FE4880);
+	background-image: linear-gradient(to right, #FFCE00 50%, #43e7df);
 	background-size: 200%;
 	background-position: 0%;
 	color: #313131;
 	font-weight: 600;
 	text-transform: uppercase;
-	transition: 0.4s;
+	transition: 0.3s;
 }
 
 .form-inner input[type="submit"]:hover {
@@ -154,10 +154,10 @@ input, button {
 	cursor: pointer;
 	display: block;
 	color: #F8F8F8;
-	font-weight: 600;
+	font-weight: 900;
 	background-color: #FF1E2D;
 	border-radius: 8px 0px 0px 8px;
-	transition: 1s;
+	transition: 0.5s;
 }
 
 .liquid-list .liquid-item:hover .remove-liquid {
@@ -169,11 +169,11 @@ input, button {
 }
 
 .liquid-list .liquid-item .amount {
-	min-width: 125px;
+	min-width: 150px;
 }
 
 .liquid-list .liquid-item:hover {
-	box-shadow: 0px 0px 6px rgba(0,0,0,0.1);
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
 
