@@ -8,24 +8,8 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
-const authenticateToken = (req, res, next) => {
-    const authHeader = req.headers["Authorization"]
-    const token = authHeader && authHeader.split(' ')[1]
-    if (token == null) return res.sendStatus(401)
-
-    jwt.verify(token, keys.secretOrKey, (err, user) => {
-        if (err) return res.sendStatus(403)
-        req.user = user
-        next()
-    })
-}
-
-router.get("/isUserAuth", verifyJWT, (req, res) => {
-    res.send("Authentication successful")
-})
-
+// /api/users/register
 router.post("/register", (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -66,6 +50,7 @@ router.post("/register", (req, res) => {
     });
 });
 
+// /api/users/login
 router.post("/login", (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
 
