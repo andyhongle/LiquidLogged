@@ -12,6 +12,7 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
       type: type.current.value,
       amount: amount.current.value,
       user: currentUser,
+      id:liquids.length // just for testing
     }
 
     let allLiquids = [...liquids, newLiquid]

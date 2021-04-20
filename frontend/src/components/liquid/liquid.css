@@ -4,8 +4,9 @@
 	padding: 0;
 	box-sizing: border-box;
     outline: none;
-    width: 80%;
-    margin: 10%;
+    width: 70%;
+    margin: 15%;
+	margin-top: 5%;
 }
 
 input, button {
@@ -177,7 +178,53 @@ input, button {
 }
 
 
-.cup {
-    background-color: rgb(146, 217, 218);
+.cup-section {
+    background-color: rgb(194, 216, 216);
     width:40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 500px;
+	position: relative;
 }
+
+.cup {
+	margin-top:100px;
+	height:300px;
+	width: 200px;
+	border-radius: 0 0 30px 30px;
+	background-color: rgb(179, 216, 245);
+	/* background color here  */
+	border: 6px solid rgb(194, 216, 216); 
+	box-shadow: 
+	/* bottom */
+	0 4px 0px 0px white, 
+	/* right */
+	4px 4px 0px 0px white, 
+	/* left */
+	-4px 4px 0px 0px white;
+	position: relative;
+	
+}
+
+.level {
+	width:100%;
+	background-color: thistle;
+	position: absolute;
+	bottom: 0;
+	border: none;
+	/* border: 6px solid rgb(194, 216, 216);  */
+	border-radius: 0 0 28px 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
