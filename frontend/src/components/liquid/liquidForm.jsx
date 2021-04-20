@@ -11,14 +11,12 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
     let newLiquid = {
       "type": type.current.value,
       "amount": amount.current.value,
-      "user": currentUser
+      "user": currentUser,
+      // id just for testing, will be deleted
+      "id": liquids.length
     }
 
-    let allLiquids = [...liquids, {
-      "type": type.current.value,
-      "amount": amount.current.value,
-      "user": currentUser
-    }]
+    let allLiquids = [...liquids, newLiquid]
     
     setLiquids(allLiquids);
 
@@ -31,13 +29,12 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
   }
 
   
-
   return (
     <form className="liquid-form" onSubmit={AddLiquid}>
-      <div className="form-inner">
-        <input type="text" name="type" id="type" placeholder="Liquid Type..." ref={type} /> 
-        <input type="number" name="amount" id="amount" placeholder="Amount..." ref={amount}/>
-        <input type="submit" value="Add Liquid" />
+      <div className="form-inner" >
+          <input className="liquid-input" type="text" name="type" id="type" placeholder="Type" ref={type} /> 
+          <input className="liquid-input" type="number" name="amount" id="amount" placeholder="Amount" ref={amount}/>
+          <input className="liquid-input" type="submit" value="Add Liquid" />
       </div>
     </form>
   )

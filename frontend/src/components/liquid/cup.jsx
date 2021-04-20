@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Cup() {
     return (
-        <div>
+        <div className="cup">
             cup
         </div>
     )

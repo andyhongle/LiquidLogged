@@ -3,6 +3,7 @@ import DailyAmount from './dailyAmount';
 import LiquidForm from './liquidForm';
 import LiquidList from "./liquidList";
 import Cup from './cup';
+import './liquid.css';
 import axios from 'axios';
 
 
@@ -28,9 +29,13 @@ export default function Liquids() {
     return (
         <div className="liquids">
             <DailyAmount dailyAmount={dailyAmount} />
-			<LiquidForm liquids={liquids} setLiquids={setLiquids} currentUser={currentUser} />
-			<LiquidList liquids={liquids} setLiquids={setLiquids} />
-            <Cup dailyAmount={dailyAmount}/>
+            <div className="main-section">
+                <div className="left">
+                    <LiquidForm liquids={liquids} setLiquids={setLiquids} currentUser={currentUser} />
+                    <LiquidList liquids={liquids} setLiquids={setLiquids} />
+                </div>
+                <Cup dailyAmount={dailyAmount}/>
+            </div>
         </div>
     )
 }
