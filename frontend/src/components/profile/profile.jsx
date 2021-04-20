@@ -41,17 +41,23 @@ export default function Profile() {
       {user: 843847393, type: "energy", amount: 500, datetime: new Date(2021,2,18)}
 
     ];
+    setFilter(allLiquids.current);
+    console.log(filteredLiquids);
+  }, [])
+
+  function handleStartDate(e){
+    setStartDate(e.target.value);
     setFilter(
-      allLiquids.current.filter(liquid => {
+      allLiquids.current.filter((liquid) => {
         let date = liquid.datetime;
         const liquidDate = date.getDate();
         const liquidMonth = date.getMonth() + 1;
         const liquidYear = date.getFullYear();
-
+        
+        if (date.getTime() > startDate && date.getTime() < endDate) return liquid;
       })
     );
-    console.log("in effect");
-  }, [])
+  }
   
   console.log(allLiquids.current);
   console.log(endDate);
