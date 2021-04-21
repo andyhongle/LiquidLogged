@@ -13,12 +13,12 @@ class SignupForm extends React.Component {
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.clearedErrors = false;
+		// this.clearedErrors = false;
 	}
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.signedIn === true) {
-			this.props.history.push("/home");
+			this.props.history.push("/liquids");
 		}
 
 		this.setState({ errors: nextProps.errors });
@@ -45,8 +45,8 @@ class SignupForm extends React.Component {
 	renderErrors() {
 		return (
 			<ul>
-				{Object.keys(this.state.errors).map((error, i) => (
-					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+				{this.props.errors.map((error, i) => (
+					<li key={`error-${i}`}>{error}</li>
 				))}
 			</ul>
 		);
@@ -54,8 +54,9 @@ class SignupForm extends React.Component {
 
 	render() {
 		return (
-			<div className="background">
+			<div className="signup-background">
 				<div className="signup-form-container">
+					<i className="fas fa-times" onClick={this.props.closeModal} />
 					<form onSubmit={this.handleSubmit}>
 						<div className="form">
 							<input
@@ -82,7 +83,7 @@ class SignupForm extends React.Component {
 							<button type="submit" value="Submit">
 								Sign Up
 							</button>
-							{this.renderErrors()}
+							{this.renderErrors}
 						</div>
 					</form>
 				</div>
