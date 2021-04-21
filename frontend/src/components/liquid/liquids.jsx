@@ -19,7 +19,7 @@ export default function Liquids() {
     }
 
     // useEffect(() => {
-    //     axios.get(`/api/liquids/user/${currentUser.id}`)
+    //     axios.get(`/api/liquids/user/${currentUser.id}/current_date`)
     //     .then(res => setLiquids(res.data))
     //     .catch((error) => {console.log(error)})
     // }, [])

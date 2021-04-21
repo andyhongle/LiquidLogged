@@ -27,7 +27,7 @@ router.post('/',
         const newLiquid = new Liquid({
             type: req.body.type,
             amount: req.body.amount,
-            user: req.user.id 
+            user: req.body.user.id 
         });
 
         newLiquid.save().then(tweet => res.json(tweet));

@@ -19,7 +19,7 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
     
     setLiquids(allLiquids);
 
-    // axios.post('/api/liquids', newLiquid)
+    // axios.post('/api/liquids/create', newLiquid)
     //     .then(res => console.log(res.data))
     //     .catch((error) => {console.log(error)});
 
