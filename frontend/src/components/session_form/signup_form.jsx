@@ -13,7 +13,7 @@ class SignupForm extends React.Component {
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.clearedErrors = false;
+		// this.clearedErrors = false;
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -45,8 +45,8 @@ class SignupForm extends React.Component {
 	renderErrors() {
 		return (
 			<ul>
-				{Object.keys(this.state.errors).map((error, i) => (
-					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+				{this.props.errors.map((error, i) => (
+					<li key={`error-${i}`}>{error}</li>
 				))}
 			</ul>
 		);
@@ -83,7 +83,7 @@ class SignupForm extends React.Component {
 							<button type="submit" value="Submit">
 								Sign Up
 							</button>
-							{this.renderErrors()}
+							{this.renderErrors}
 						</div>
 					</form>
 				</div>

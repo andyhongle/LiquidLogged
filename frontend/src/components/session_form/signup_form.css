@@ -31,8 +31,10 @@ background:#150e56;
 	height: 45px;
 	margin: 6px 20px 0 25px;
 	padding-left: 10px;
-	transition: box-shadow 0.3s;
 	width: 350px;
+	font-size: 20px;
+	box-shadow: 0 0 3px #1670be;
+	outline: none;
 }
 
 .signup-form-container button {

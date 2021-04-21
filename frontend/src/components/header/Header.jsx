@@ -26,7 +26,6 @@ class Header extends React.Component {
 		this.setState({ clicked: !this.state.clicked });
 	}
 
-	
 	getSideLinks() {
 		if (!this.props.loggedIn) {
 			return (
@@ -122,17 +121,17 @@ class Header extends React.Component {
 	render() {
 		return (
 			<>
-					<nav className="header">
-						<div>
-							<Link to="/" className="header-logo" onClick={this.handleClick}>
-								LiquidTracker
-							</Link>
-							<span className="ripple"></span>
-						</div>
+				<nav className="header">
+					<div>
+						<Link to="/" className="header-logo" onClick={this.handleClick}>
+							LiquidTracker
+						</Link>
+						<span className="ripple"></span>
+					</div>
 
-						{this.getSideLinks()}
-						{this.getLinks()}
-					</nav>
+					{this.getSideLinks()}
+					{this.getLinks()}
+				</nav>
 			</>
 		);
 	}
