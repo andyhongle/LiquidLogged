@@ -7,9 +7,9 @@ export default function LiquidList({liquids, setLiquids}) {
     const removeLiquid = id => {
         let temp = liquids.filter(liquid => liquid.id !== id);
         setLiquids(temp);
-        axios.delete('api/liquids/'+id)
-            .then(res => console.log(res.data))
-            .catch((error) => {console.log(error)});
+        // axios.delete('api/liquids/'+id)
+        //     .then(res => console.log(res.data))
+        //     .catch((error) => {console.log(error)});
     }
 
 
@@ -19,15 +19,19 @@ export default function LiquidList({liquids, setLiquids}) {
 
     return (
         <div className="liquid-list">
-        {
-            liquids.sort(sortByDate).map((liquid, index) => (
-            <LiquidItem 
-                key={index} 
-                liquid={liquid} 
-                removeLiquid={removeLiquid}
-            />
-            ))
-        }
+        <table>
+            <tbody>
+                {
+                    liquids.sort(sortByDate).map((liquid, index) => (
+                    <LiquidItem 
+                        key={index} 
+                        liquid={liquid} 
+                        removeLiquid={removeLiquid}
+                    />
+                    ))
+                }
+            </tbody>
+        </table>
         </div>
     )
 }

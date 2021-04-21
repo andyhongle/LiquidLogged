@@ -6,16 +6,15 @@ import Splash from "./splash/Splash";
 import Footer from "./footer/Footer";
 import Profile from "./profile/profile";
 import Liquids from "../components/liquid/liquids.jsx";
-import LoginFormContainer from "./session_form/login_form_container"
-import SignupFormContainer from "./session_form/signup_form_container";
+import Modal from "./modal/modal";
+
 
 const App = () => (
 	<div>
+        <Modal />
 		<HeaderContainer />
 		<Switch>
 			<AuthRoute exact path="/" component={Splash} />
-			<AuthRoute exact path="/login" component={LoginFormContainer} />
-			<AuthRoute exact path="/signup" component={SignupFormContainer} />
 			<Route exact path="/liquids" component={Liquids} />
 			<Route exact path="/profile" component={Profile} />
 		</Switch>
