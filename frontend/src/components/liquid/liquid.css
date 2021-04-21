@@ -214,9 +214,6 @@ td {
 	height:300px;
 	width: 200px;
 	border-radius: 0 0 30px 30px;
-	/* background-color: #f7d9d9; */
-
-	/* background color here  */
 	border: 6px solid #d5ecc2; 
 	box-shadow: 
 	/* bottom */
@@ -226,7 +223,9 @@ td {
 	/* left */
 	-4px 4px 0px 0px white;
 	position: relative;
+	/* overflow: hidden; */
 }
+
 
 
 .level {
@@ -238,6 +237,37 @@ td {
 	border: none;
 	border-radius: 0 0 27px 27px;
 	transition: .8s;
+	overflow: hidden;
+}
+
+/* water wave */
+.level:before,
+.level:after {
+    content: '';
+    position: absolute;
+    width:250px;
+    height: 300px;
+    border-radius:55% 45%;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d5ecc2;
+    animation: rotate 5s linear infinite;
+}
+.level:after {
+    left: 47%;
+    bottom: 10%;
+    border-radius: 45% 50%;
+    opacity: 0.3;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%) rotateZ(0deg);
+    }
+    100% {
+        transform: translate(-50%) rotateZ(360deg);
+    }
 }
 
 .straw {
