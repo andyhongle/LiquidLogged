@@ -1,12 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import "./login_form.css";
-import IconButton from "@material-ui/core/IconButton";
-import InputLabel from "@material-ui/core/InputLabel";
-import Visibility from "@material-ui/icons/Visibility";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import Input from "@material-ui/core/Input";
 
 class LoginForm extends React.Component {
 	constructor(props) {
@@ -21,8 +15,8 @@ class LoginForm extends React.Component {
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.toggleShow = this.toggleShow.bind(this);
-
-		// this.renderErrors = this.renderErrors.bind(this);
+		this.handleDemo = this.handleDemo.bind(this);
+		this.renderErrors = this.renderErrors.bind(this);
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -49,6 +43,7 @@ class LoginForm extends React.Component {
 		};
 
 		this.props.login(user);
+		this.setState({ errors: "" });
 	}
 
 	handleDemo(e) {
@@ -57,29 +52,21 @@ class LoginForm extends React.Component {
 			username: "demo",
 			password: "demo",
 		};
-		this.setState({ username: "demo", password: "demo" });
-
 		this.props.login(user);
+		this.setState({ errors: "" });
 	}
 
 	toggleShow() {
 		this.setState({ hidden: !this.state.hidden });
 	}
 
-	// renderErrors() {
-	// 	return (
-	// 		<ul>
-	// 			{Object.keys(this.state.errors).map((error, i) => (
-	// 				<li key={`error-${i}`}>{this.state.errors[error]}</li>
-	// 			))}
-	// 		</ul>
-	// 	);
-	// }
 	renderErrors() {
 		return (
 			<ul>
-				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>{error}</li>
+				{Object.keys(this.state.errors).map((error, i) => (
+					<li className="errors" key={`error-${i}`}>
+						{this.state.errors[error]}
+					</li>
 				))}
 			</ul>
 		);
@@ -96,6 +83,7 @@ class LoginForm extends React.Component {
 							value={this.state.username}
 							onChange={this.update("username")}
 							placeholder="Username"
+							// required
 						/>
 						<br />
 						<input
@@ -103,6 +91,7 @@ class LoginForm extends React.Component {
 							value={this.state.password}
 							onChange={this.update("password")}
 							placeholder="Password"
+							// required
 						/>
 						<span className="eye-icon">
 							<i
@@ -113,14 +102,14 @@ class LoginForm extends React.Component {
 						</span>
 
 						<br />
+						<br />
 						<button type="submit" value="Submit">
 							Log In
 						</button>
-
-						<button type="submit" value="Submit" onSubmit={this.handleDemo}>
+						<button type="submit" value="Submit" onClick={this.handleDemo}>
 							Demo Login
 						</button>
-						{this.renderErrors}
+						{this.renderErrors()}
 					</form>
 				</div>
 			</div>

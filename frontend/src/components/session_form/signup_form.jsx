@@ -13,7 +13,9 @@ class SignupForm extends React.Component {
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
-		// this.clearedErrors = false;
+		this.clearedErrors = false;
+        		this.renderErrors = this.renderErrors.bind(this);
+
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -40,13 +42,14 @@ class SignupForm extends React.Component {
 		};
 
 		this.props.signup(user, this.props.history);
+        this.setState({ errors: "" })
 	}
 
 	renderErrors() {
 		return (
 			<ul>
-				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>{error}</li>
+				{Object.keys(this.state.errors).map((error, i) => (
+					<li className="errors" key={`error-${i}`}>{this.state.errors[error]}</li>
 				))}
 			</ul>
 		);
@@ -64,6 +67,7 @@ class SignupForm extends React.Component {
 								value={this.state.email}
 								onChange={this.update("username")}
 								placeholder="Username"
+                                required
 							/>
 							<br />
 							<input
@@ -71,6 +75,7 @@ class SignupForm extends React.Component {
 								value={this.state.password}
 								onChange={this.update("password")}
 								placeholder="Password"
+                                required
 							/>
 							<br />
 							<input
@@ -78,12 +83,13 @@ class SignupForm extends React.Component {
 								value={this.state.password2}
 								onChange={this.update("password2")}
 								placeholder="Confirm Password"
+                                required
 							/>
 							<br />
 							<button type="submit" value="Submit">
 								Sign Up
 							</button>
-							{this.renderErrors}
+							{this.renderErrors()}
 						</div>
 					</form>
 				</div>
