@@ -61,5 +61,3 @@ export default function Liquids() {
         </div>
     )
 }
-
-
