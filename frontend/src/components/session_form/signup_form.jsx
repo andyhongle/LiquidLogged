@@ -18,7 +18,7 @@ class SignupForm extends React.Component {
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.signedIn === true) {
-			this.props.history.push("/home");
+			this.props.history.push("/liquids");
 		}
 
 		this.setState({ errors: nextProps.errors });
@@ -54,8 +54,9 @@ class SignupForm extends React.Component {
 
 	render() {
 		return (
-			<div className="background">
+			<div className="signup-background">
 				<div className="signup-form-container">
+					<i className="fas fa-times" onClick={this.props.closeModal} />
 					<form onSubmit={this.handleSubmit}>
 						<div className="form">
 							<input

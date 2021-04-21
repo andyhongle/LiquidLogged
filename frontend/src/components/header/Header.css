@@ -1,3 +1,4 @@
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -25,6 +26,11 @@
 	font-size: 2rem;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
+	font-size: 50px;
+	font-family: "Norican", cursive;
+	color: white;
+	text-shadow: 0 2px 0 #8ed2d4, 2px 3px 15px rgba(0, 0, 0, 0.5);
 }
 
 .header-menu {
@@ -42,6 +48,7 @@
 
 .fa-bars {
 	color: #fff;
+	cursor: pointer;
 }
 
 .header-links {
@@ -85,7 +92,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		transform: translate(25%, 50%);
+		transform: translate(10%, 5%);
 	}
 
 	.menu-icon {
@@ -116,6 +123,7 @@
 		padding: 14px 20px;
 		border: 1px solid #fff;
 		transition: all 0.3s ease-out;
+		cursor: pointer;
 	}
 
 	.header-links:hover {
@@ -136,7 +144,6 @@
 	font-size: 18px;
 	margin: 10px;
 }
-
 
 .session-btn:hover {
 	background: #fff;
@@ -159,4 +166,3 @@
 	color: #242424;
 	transition: all 0.3s ease-out;
 }
-
