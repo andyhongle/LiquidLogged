@@ -1,15 +1,20 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 function LiquidItem({liquid, removeLiquid}) {
 
-
   return (
-    <div className="liquid-item">
+    <tr className="liquid-item">
       <button className="remove-liquid" onClick={() => removeLiquid(liquid.id)}>&times;</button>
-      <div className="type">{liquid.type}</div>
-      <div className="amount">{liquid.amount}ml</div>
-    </div>
+      <td className="type">{liquid.type}</td>
+      <td className="amount">{liquid.amount}ml</td>
+    </tr>
   )
 }
 
 export default LiquidItem;
+
+    // <div className="liquid-item">
+    //   <button className="remove-liquid" onClick={() => removeLiquid(liquid.id)}>&times;</button>
+    //   <div className="type">{liquid.type}</div>
+    //   <div className="amount">{liquid.amount}ml</div>
+    // </div>
