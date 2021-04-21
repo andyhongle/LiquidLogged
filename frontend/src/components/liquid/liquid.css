@@ -63,6 +63,7 @@ input, button {
 	margin: 15px;
 	position: relative;
     /* background-color: coral; */
+	margin-top:0;
 }
 
 .liquid-form:after {
@@ -99,8 +100,6 @@ input, button {
 	font-size: 18px;
 	padding: 10px 10px;
 	background-color: #FFF;
-    /* margin:3px; */
-    /* border-radius: 8px; */
 }
 
 .form-inner input[type="text"] {
@@ -166,11 +165,13 @@ input, button {
 }
 
 .liquid-list .liquid-item:hover .remove-liquid {
-	width: 30px;
+	width: 60px;
 }
 
 .liquid-list .liquid-item .type {
 	flex: 1 1 100%;
+	margin-left: 5%;
+	padding-left: 10%;
 }
 
 .liquid-list .liquid-item .amount {
@@ -178,12 +179,25 @@ input, button {
 }
 
 .liquid-list .liquid-item:hover {
-	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.401);
+}
+
+/* change list to table */
+.liquid-list {
+	overflow-y: scroll;
+	max-height: 400px;
+	display: grid;
+}
+
+
+td {
+  padding: 1rem;
+  /* background-color: tomato; */
 }
 
 
 .cup-section {
-    background-color: rgb(194, 216, 216);
+    background-color: #d5ecc2;
     width:40%;
 	display: flex;
 	justify-content: center;
@@ -199,9 +213,10 @@ input, button {
 	height:300px;
 	width: 200px;
 	border-radius: 0 0 30px 30px;
-	background-color: thistle;
+	/* background-color: #f7d9d9; */
+
 	/* background color here  */
-	border: 6px solid rgb(194, 216, 216); 
+	border: 6px solid #d5ecc2; 
 	box-shadow: 
 	/* bottom */
 	0 4px 0px 0px white, 
@@ -211,6 +226,7 @@ input, button {
 	-4px 4px 0px 0px white;
 	position: relative;
 }
+
 
 .level {
 	max-height: 100%;
@@ -233,6 +249,38 @@ input, button {
 	border-radius: .5rem;
 }
 
+.cup:hover {
+	animation: shake 1s infinite;
+}
+
+
+@keyframes shake {
+	0% {
+		transform: rotate(-10deg);
+	}
+
+	20% {
+		transform: rotate(10deg);
+	}
+
+	40% {
+		transform: rotate(-10deg);
+	}
+
+	60% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-10deg);
+	}
+
+	100%{
+		transform: rotate(10deg);
+	}
+	
+}
+
 .straw-head {
 	background-color:coral;
 	height:60px;
@@ -245,16 +293,26 @@ input, button {
 }
 
 .message {
+	transition: 2s;
 	position: absolute;
 	top: 5%;
 	left:10%;
 	right:10%;
 	font-weight: 600;
 	padding:5px;
-	/* background-color: darkgray; */
+	background-color: #f8615a;
+	box-shadow: 0 0 4px 8px;
+	color:#edf798;
 	border-radius: .5rem;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+.message:hover {
+	animation: shake 1s infinite;
+}
+
+
+
 
 
 

@@ -19,15 +19,19 @@ export default function LiquidList({liquids, setLiquids}) {
 
     return (
         <div className="liquid-list">
-        {
-            liquids.sort(sortByDate).map((liquid, index) => (
-            <LiquidItem 
-                key={index} 
-                liquid={liquid} 
-                removeLiquid={removeLiquid}
-            />
-            ))
-        }
+        <table>
+            <tbody>
+                {
+                    liquids.sort(sortByDate).map((liquid, index) => (
+                    <LiquidItem 
+                        key={index} 
+                        liquid={liquid} 
+                        removeLiquid={removeLiquid}
+                    />
+                    ))
+                }
+            </tbody>
+        </table>
         </div>
     )
 }
