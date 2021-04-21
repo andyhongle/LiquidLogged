@@ -8,10 +8,10 @@ module.exports = function validateLiquidInput(data) {
     data.amount = validNumber(data.amount) ? data.amount : '';
     
     if (Validator.isEmpty(data.type)) {
-        errors.text.push('Type field is required');
+        errors.text.push('Type field is required! ');
     }
      if (Validator.isEmpty(data.amount)) {
-        errors.text.push('Amount is required');
+        errors.text.push('Amount is required! ');
     }
     return {
         errors,

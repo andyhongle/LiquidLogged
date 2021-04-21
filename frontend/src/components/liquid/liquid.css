@@ -355,6 +355,13 @@ td {
 	animation: shake 1s infinite;
 }
 
+.error-section {
+	margin-left: 10%;
+	margin-right: 10%;
+	border-radius: .5rem;
+	text-align: center;
+}
+
 
 
 
