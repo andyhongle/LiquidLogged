@@ -4,6 +4,7 @@ const timeElapsed = Date.now()
 const today = new Date(timeElapsed)
 currentDate = today.toISOString().split('T')[0]
 const LiquidSchema = new Schema({
+
     user: {
         type: Schema.Types.ObjectId,
         ref: 'users'

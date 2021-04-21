@@ -1,4 +1,4 @@
-import React, {useRef}  from 'react'
+import React, {useState, useRef}  from 'react'
 import axios from 'axios';
 
 export default function LiquidForm({liquids,currentUser, setLiquids}) {
@@ -15,12 +15,18 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
     }
 
     axios.post('/api/liquids/create', newLiquid)
-        .then(res => setLiquids([...liquids, res.data]))
-        .catch((error) => {console.log(error)});
-
+        .then(res => {
+          console.log(res);
+          axios.get(`/api/liquids/user/${currentUser.id}/current_date`)
+          .then(res => {setLiquids(res.data)})
+        }) 
+        .catch(errors => {
+          // console.dir returns an object 
+          console.log(errors.response.data.text);
+        });
 
     type.current.value = "";
-    amount.current.value = 0;
+    amount.current.value = "";
   }
 
   
@@ -28,7 +34,7 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
     <form className="liquid-form" onSubmit={AddLiquid}>
       <div className="form-inner" >
           <input className="liquid-input" type="text" name="type" id="type" placeholder="Type" ref={type} /> 
-          <input className="liquid-input" type="number" name="amount" id="amount" placeholder="Amount" ref={amount}/>
+          <input className="liquid-input" type="number" min="1" max="2000" name="amount" id="amount" placeholder="Amount" ref={amount}/>
           <input className="liquid-input" type="submit" value="Add Liquid" />
       </div>
     </form>

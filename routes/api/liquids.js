@@ -8,7 +8,6 @@ const today = new Date(timeElapsed)
 currentDate = today.toISOString().split('T')[0]
 
 
-
 // gets all liquids, used for testing
 router.get('/', (req, res) => {
     Liquid.find()
@@ -18,10 +17,10 @@ router.get('/', (req, res) => {
 });
 
 
-
 // fetch all liquids from a user on the current day
 router.get('/user/:user_id/current_date', (req, res) => {
     Liquid.find({user: req.params.user_id, date: currentDate})
+        .sort({ datetime: -1 })
         .then(liquids => res.json(liquids))
         .catch(err => res.status(404).json({ noliquidsfound: 'No liquids found' }));
 });
@@ -30,19 +29,29 @@ router.get('/user/:user_id/current_date', (req, res) => {
 // /api/liquids create liquid
 router.post('/create', 
     passport.authenticate('jwt', { session: false }),
-    (req, res) => {
+    (req, res) => { 
         const { errors, isValid } = validateLiquidInput(req.body);
+
         if (!isValid) {
             return res.status(400).json(errors);
         }
+
         const newLiquid = new Liquid({
             type: req.body.type,
             amount: req.body.amount,
             user: req.body.user.id 
         });
-        newLiquid.save().then(liquid => res.json(liquid));
+
+        newLiquid.save()
+            .then(liquid => res.json(liquid)) 
     }
 );
+
+        // if (!isValid) {
+        //     console.log("hello");
+        //     return res.status(400).json(errors);
+        // }
+// .catch(() => res.status(400).json({"msg": errors.text.toString()}))
 
 
 // /api/liquids/:id delete liquid
