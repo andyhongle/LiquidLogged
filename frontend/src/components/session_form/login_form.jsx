@@ -1,12 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import "./login_form.css";
-import IconButton from "@material-ui/core/IconButton";
-import InputLabel from "@material-ui/core/InputLabel";
-import Visibility from "@material-ui/icons/Visibility";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import Input from "@material-ui/core/Input";
 
 class LoginForm extends React.Component {
 	constructor(props) {
@@ -22,7 +16,7 @@ class LoginForm extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.toggleShow = this.toggleShow.bind(this);
 
-		// this.renderErrors = this.renderErrors.bind(this);
+		this.renderErrors = this.renderErrors.bind(this);
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -66,15 +60,15 @@ class LoginForm extends React.Component {
 		this.setState({ hidden: !this.state.hidden });
 	}
 
-	// renderErrors() {
-	// 	return (
-	// 		<ul>
-	// 			{Object.keys(this.state.errors).map((error, i) => (
-	// 				<li key={`error-${i}`}>{this.state.errors[error]}</li>
-	// 			))}
-	// 		</ul>
-	// 	);
-	// }
+	renderErrors() {
+		return (
+			<ul>
+				{Object.keys(this.state.errors).map((error, i) => (
+					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+				))}
+			</ul>
+		);
+	}
 	renderErrors() {
 		return (
 			<ul>
