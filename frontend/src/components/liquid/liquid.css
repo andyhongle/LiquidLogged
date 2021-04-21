@@ -14,7 +14,6 @@
 input, button {
 	border: none;
 	outline: none;
-	/* background: none; */
 }
 
 
@@ -100,15 +99,21 @@ input, button {
 	font-size: 18px;
 	padding: 10px 10px;
 	background-color: #FFF;
+	border: none;
+	outline: none;
 }
 
 .form-inner input[type="text"] {
 	border-radius: 8px 0px 0px 8px;
 	flex: 1 1 100%;
+	border: none;
+	outline: none;
 }
 
 .form-inner input[type="number"] {
 	border-radius: 0px;
+	border: none;
+	outline: none;
 }
 
 .form-inner input[type="submit"] {
@@ -121,15 +126,21 @@ input, button {
 	font-weight: 600;
 	text-transform: uppercase;
 	transition: 0.3s;
+	border: none;
+	outline: none;
 }
 
 .form-inner input[type="submit"]:hover {
 	background-position: 100%;
 	color: #FFF;
+	border: none;
+	outline: none;
 }
 
 .liquid-input {
     width: 100%;
+	border: none;
+	outline: none;
 }
 
 .liquid-list {

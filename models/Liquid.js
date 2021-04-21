@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
-
+const timeElapsed = Date.now()
+const today = new Date(timeElapsed)
+currentDate = today.toISOString().split('T')[0]
 const LiquidSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
@@ -15,10 +16,13 @@ const LiquidSchema = new Schema({
         type: Number,
         required: true
     },
-    datetime: {
+    datetime: { 
         type: Date,
         default: Date.now
+    },
+    date: { 
+        type: String,
+        default: currentDate
     }
 });
-
 module.exports = Liquid = mongoose.model('liquid', LiquidSchema);

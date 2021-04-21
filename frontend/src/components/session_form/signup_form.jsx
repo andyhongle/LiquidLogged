@@ -18,7 +18,7 @@ class SignupForm extends React.Component {
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.signedIn === true) {
-			this.props.history.push("/home");
+			this.props.history.push("/liquids");
 		}
 
 		this.setState({ errors: nextProps.errors });

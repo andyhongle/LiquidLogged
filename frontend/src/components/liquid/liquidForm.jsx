@@ -12,16 +12,12 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
       type: type.current.value,
       amount: amount.current.value,
       user: currentUser,
-      id:liquids.length // just for testing
     }
 
-    let allLiquids = [...liquids, newLiquid]
-    
-    setLiquids(allLiquids);
+    axios.post('/api/liquids/create', newLiquid)
+        .then(res => setLiquids([...liquids, res.data]))
+        .catch((error) => {console.log(error)});
 
-    // axios.post('/api/liquids/create', newLiquid)
-    //     .then(res => console.log(res.data))
-    //     .catch((error) => {console.log(error)});
 
     type.current.value = "";
     amount.current.value = 0;

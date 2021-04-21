@@ -10,19 +10,22 @@ import axios from 'axios';
 export default function Liquids() {
     const [liquids, setLiquids] = useState([]);
     const [dailyAmount, setDailyAmount] = useState(0);
-    // let currentUser;
+    const [currentUser, setCurrentUser] = useState(null);
     // axios.get("/api/users/current").then(res => console.log(res));
 
-    let currentUser = {
-        id: "607f19114a8019c5a2507761",
-        username: "lin"
-    }
+    // let currentUser = {
+    //     id: "607f19114a8019c5a2507761",
+    //     username: "lin"
+    // }
 
-    // useEffect(() => {
-    //     axios.get(`/api/liquids/user/${currentUser.id}/current_date`)
-    //     .then(res => setLiquids(res.data))
-    //     .catch((error) => {console.log(error)})
-    // }, [])
+    useEffect(() => {
+        axios.get("/api/users/current").then(res => {
+            setCurrentUser(res.data);
+            axios.get(`/api/liquids/user/${res.data.id}/current_date`)
+            .then(res => setLiquids(res.data))
+            .catch((error) => {console.log(error)})
+        })
+    }, [])
 
     useEffect(() => {
         let temp = 0;
