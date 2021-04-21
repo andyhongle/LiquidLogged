@@ -146,6 +146,7 @@ input, button {
 	display: flex;
 	transition: 0.4s;
 	padding-left: 75px;
+	font-size: large;
 }
 
 .liquid-list .liquid-item .remove-liquid {
@@ -162,6 +163,7 @@ input, button {
 	background-color: #FF1E2D;
 	border-radius: 8px 0px 0px 8px;
 	transition: 0.5s;
+	font-size: large;
 }
 
 .liquid-list .liquid-item:hover .remove-liquid {
@@ -191,8 +193,7 @@ input, button {
 
 
 td {
-  padding: 1rem;
-  /* background-color: tomato; */
+  padding: .5rem;
 }
 
 
