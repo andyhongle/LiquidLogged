@@ -7,8 +7,6 @@ class Header extends React.Component {
 		super(props);
 		this.state = {
 			clicked: false,
-			signupModal: false,
-			loginModal: false,
 		};
 
 		this.logoutUser = this.logoutUser.bind(this);
@@ -16,28 +14,7 @@ class Header extends React.Component {
 		this.getSideLinks = this.getSideLinks.bind(this);
 
 		this.handleClick = this.handleClick.bind(this);
-		// this.openSignupModal = this.openSignupModal.bind(this);
-		// this.closeSignupModal = this.closeSignupModal.bind(this);
-		// this.openLoginModal = this.openLoginModal.bind(this);
-		// this.closeLoginModal = this.closeLoginModal.bind(this);
-		this.closeMobileMenu = this.closeMobileMenu.bind(this);
 	}
-
-	// openSignupModal = () => {
-	// 	this.setState({ signupModal: true });
-	// };
-
-	// openLoginModal = () => {
-	// 	this.setState({ loginModal: true });
-	// };
-
-	// closeSignupModal = () => {
-	// 	this.setState({ signupModal: false });
-	// };
-
-	// closeLoginModal = () => {
-	// 	this.setState({ loginModal: false });
-	// };
 
 	logoutUser(e) {
 		e.preventDefault();
@@ -47,11 +24,6 @@ class Header extends React.Component {
 	handleClick(e) {
 		e.preventDefault();
 		this.setState({ clicked: !this.state.clicked });
-	}
-
-	closeMobileMenu(e) {
-		e.preventDefault();
-		this.setState({ button: false });
 	}
 
 	getSideLinks() {
@@ -74,14 +46,20 @@ class Header extends React.Component {
 							</Link>
 						</li>
 						<li className="header-item" onClick={this.handleClick}>
-							<Link to="/signup" className="header-links">
+							<div
+								onClick={() => this.props.openModal("signup")}
+								className="header-links"
+							>
 								Sign Up
-							</Link>
+							</div>
 						</li>
 						<li className="header-item" onClick={this.handleClick}>
-							<Link to="/login" className="header-links">
+							<div
+								onClick={() => this.props.openModal("login")}
+								className="header-links"
+							>
 								Log In
-							</Link>
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -122,13 +100,19 @@ class Header extends React.Component {
 		} else {
 			return (
 				<div className="header-right">
-					<Link to={"/signup"}>
-						<button className="session-btn">Sign up</button>
-					</Link>
+					<button
+						className="session-btn"
+						onClick={() => this.props.openModal("signup")}
+					>
+						Sign up
+					</button>
 
-					<Link to={"/login"}>
-						<button className="session-btn">Log in</button>
-					</Link>
+					<button
+						className="session-btn"
+						onClick={() => this.props.openModal("login")}
+					>
+						Log in
+					</button>
 				</div>
 			);
 		}
@@ -138,9 +122,12 @@ class Header extends React.Component {
 		return (
 			<>
 				<nav className="header">
-					<Link to="/" className="header-logo" onClick={this.closeMobileMenu}>
-						LiquidTracker
-					</Link>
+					<div>
+						<Link to="/" className="header-logo" onClick={this.handleClick}>
+							Liquid Logged
+						</Link>
+						<span className="ripple"></span>
+					</div>
 
 					{this.getSideLinks()}
 					{this.getLinks()}

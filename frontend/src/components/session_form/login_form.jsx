@@ -10,9 +10,12 @@ class LoginForm extends React.Component {
 			username: "",
 			password: "",
 			errors: {},
+			hidden: true,
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.toggleShow = this.toggleShow.bind(this);
+		this.handleDemo = this.handleDemo.bind(this);
 		this.renderErrors = this.renderErrors.bind(this);
 	}
 
@@ -40,13 +43,30 @@ class LoginForm extends React.Component {
 		};
 
 		this.props.login(user);
+		this.setState({ errors: "" });
+	}
+
+	handleDemo(e) {
+		e.preventDefault();
+		let user = {
+			username: "demo",
+			password: "demo",
+		};
+		this.props.login(user);
+		this.setState({ errors: "" });
+	}
+
+	toggleShow() {
+		this.setState({ hidden: !this.state.hidden });
 	}
 
 	renderErrors() {
 		return (
 			<ul>
 				{Object.keys(this.state.errors).map((error, i) => (
-					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+					<li className="errors" key={`error-${i}`}>
+						{this.state.errors[error]}
+					</li>
 				))}
 			</ul>
 		);
@@ -54,29 +74,39 @@ class LoginForm extends React.Component {
 
 	render() {
 		return (
-			<div className="background">
+			<div className="login-background">
 				<div className="login-form-container">
+					<i className="fas fa-times" onClick={this.props.closeModal} />
 					<form onSubmit={this.handleSubmit}>
 						<input
-							autofocus
 							type="text"
 							value={this.state.username}
 							onChange={this.update("username")}
 							placeholder="Username"
+							// required
 						/>
 						<br />
 						<input
-							type="password"
+							type={this.state.hidden ? "password" : "text"}
 							value={this.state.password}
 							onChange={this.update("password")}
 							placeholder="Password"
+							// required
 						/>
+						<span className="eye-icon">
+							<i
+								className={this.state.hidden ? "fa fa-eye-slash" : "fa fa-eye"}
+								aria-hidden="true"
+								onClick={this.toggleShow}
+							></i>
+						</span>
+
+						<br />
 						<br />
 						<button type="submit" value="Submit">
 							Log In
 						</button>
-
-						<button type="submit" value="Submit">
+						<button type="submit" value="Submit" onClick={this.handleDemo}>
 							Demo Login
 						</button>
 						{this.renderErrors()}

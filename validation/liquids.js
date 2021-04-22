@@ -13,6 +13,11 @@ module.exports = function validateLiquidInput(data) {
      if (Validator.isEmpty(data.amount)) {
         errors.text.push('Amount is required! ');
     }
+
+     if (Validator.isEmpty(data.amount)) {
+        errors.text = 'Type amount is required';
+    }
+
     return {
         errors,
         isValid: Object.keys(errors.text).length === 0

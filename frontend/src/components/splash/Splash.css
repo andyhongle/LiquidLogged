@@ -1,24 +1,110 @@
 
 .splash-container {
-  background:#150e56;
-  height: 100vh;
+  background: #25274D;  
+  height: 100%;
   width: 100%;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4%;
+}
+
+.title {
+  color: white;
+  font-size: 80px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.description {
+  color: #2E9CCA;
+  font-size: 30px;
+  width: 900px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 55px;
+  margin-left: 55px;
+}
+
+.splash-pictures {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.splash-pictures img {
+  width: 1200px;
+  height: 700px;
+  object-fit: cover;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.meet-text {
+  font-size: 60px;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+.about-row {
+  display: flex;
+  margin-top: 50px; 
+}
+
+.profile-container {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  padding-left: 20%;
+  align-items: center;
+  margin-left: 75px;
+  margin-right: 75px;
 }
 
-.splash-container > h1 {
-  color: white;
-  font-size: 2rem;
-  margin-top: 50px;
+.profile-name {
+  margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+
+}
+
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    object-fit: cover;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+}
+
+.icon-text {
+   font-size: 30px;
+   font-family: 'Roboto', sans-serif;
+   margin-left: 10px;
+}
+
+.linked-container, .github-container {
   display: flex;
-  position: sticky;
+  align-items: center;
+  text-decoration: none;
 }
 
-.splash-container > p {
-  margin-top: 8px;
-  color: #fff;
-  font-size: 25px;
+.linked-container:hover, .github-container:hover {
+  opacity: 0.3;
+  cursor: pointer;
 }
+
+.linked-container {
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
