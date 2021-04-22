@@ -42,6 +42,7 @@ class LoginForm extends React.Component {
 			password: this.state.password,
 		};
 
+        this.props.closeModal();
 		this.props.login(user);
 		this.setState({ errors: "" });
 	}
@@ -49,9 +50,11 @@ class LoginForm extends React.Component {
 	handleDemo(e) {
 		e.preventDefault();
 		let user = {
-			username: "demo",
-			password: "demo",
+			username: "demousername",
+			password: "demopassword",
 		};
+
+        this.props.closeModal();
 		this.props.login(user);
 		this.setState({ errors: "" });
 	}
