@@ -13,15 +13,18 @@ class SignupForm extends React.Component {
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
-		// this.clearedErrors = false;
+		this.renderErrors = this.renderErrors.bind(this);
 	}
 
-	componentWillReceiveProps(nextProps) {
-		if (nextProps.signedIn === true) {
-			this.props.history.push("/liquids");
+	componentDidUpdate(nextProps) {
+		if (nextProps.signedIn !== this.props.signedIn) {
+			let user = {
+				username: this.state.username,
+				password: this.state.password,
+			};
+            this.props.closeModal();
+			this.props.login(user);
 		}
-
-		this.setState({ errors: nextProps.errors });
 	}
 
 	update(field) {
@@ -39,14 +42,18 @@ class SignupForm extends React.Component {
 			password2: this.state.password2,
 		};
 
-		this.props.signup(user, this.props.history);
+         this.props.closeModal();
+		this.props.signup(user);
+		this.setState({ errors: "" });
 	}
 
 	renderErrors() {
 		return (
 			<ul>
-				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>{error}</li>
+				{Object.keys(this.state.errors).map((error, i) => (
+					<li className="errors" key={`error-${i}`}>
+						{this.state.errors[error]}
+					</li>
 				))}
 			</ul>
 		);
@@ -64,6 +71,7 @@ class SignupForm extends React.Component {
 								value={this.state.email}
 								onChange={this.update("username")}
 								placeholder="Username"
+								required
 							/>
 							<br />
 							<input
@@ -71,6 +79,7 @@ class SignupForm extends React.Component {
 								value={this.state.password}
 								onChange={this.update("password")}
 								placeholder="Password"
+								required
 							/>
 							<br />
 							<input
@@ -78,12 +87,13 @@ class SignupForm extends React.Component {
 								value={this.state.password2}
 								onChange={this.update("password2")}
 								placeholder="Confirm Password"
+								required
 							/>
 							<br />
 							<button type="submit" value="Submit">
 								Sign Up
 							</button>
-							{this.renderErrors}
+							{this.renderErrors()}
 						</div>
 					</form>
 				</div>

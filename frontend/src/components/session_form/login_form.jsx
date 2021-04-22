@@ -15,7 +15,11 @@ class LoginForm extends React.Component {
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.toggleShow = this.toggleShow.bind(this);
+<<<<<<< HEAD
 
+=======
+		this.handleDemo = this.handleDemo.bind(this);
+>>>>>>> main
 		this.renderErrors = this.renderErrors.bind(this);
 	}
 
@@ -42,18 +46,21 @@ class LoginForm extends React.Component {
 			password: this.state.password,
 		};
 
+        this.props.closeModal();
 		this.props.login(user);
+		this.setState({ errors: "" });
 	}
 
 	handleDemo(e) {
 		e.preventDefault();
 		let user = {
-			username: "demo",
-			password: "demo",
+			username: "demousername",
+			password: "demopassword",
 		};
-		this.setState({ username: "demo", password: "demo" });
 
+        this.props.closeModal();
 		this.props.login(user);
+		this.setState({ errors: "" });
 	}
 
 	toggleShow() {
@@ -64,7 +71,13 @@ class LoginForm extends React.Component {
 		return (
 			<ul>
 				{Object.keys(this.state.errors).map((error, i) => (
+<<<<<<< HEAD
 					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+=======
+					<li className="errors" key={`error-${i}`}>
+						{this.state.errors[error]}
+					</li>
+>>>>>>> main
 				))}
 			</ul>
 		);
@@ -90,6 +103,7 @@ class LoginForm extends React.Component {
 							value={this.state.username}
 							onChange={this.update("username")}
 							placeholder="Username"
+							// required
 						/>
 						<br />
 						<input
@@ -97,6 +111,7 @@ class LoginForm extends React.Component {
 							value={this.state.password}
 							onChange={this.update("password")}
 							placeholder="Password"
+							// required
 						/>
 						<span className="eye-icon">
 							<i
@@ -107,14 +122,14 @@ class LoginForm extends React.Component {
 						</span>
 
 						<br />
+						<br />
 						<button type="submit" value="Submit">
 							Log In
 						</button>
-
-						<button type="submit" value="Submit" onSubmit={this.handleDemo}>
+						<button type="submit" value="Submit" onClick={this.handleDemo}>
 							Demo Login
 						</button>
-						{this.renderErrors}
+						{this.renderErrors()}
 					</form>
 				</div>
 			</div>

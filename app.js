@@ -33,3 +33,22 @@ app.get("/", (req, res) => res.send("Hello World"));
 
 app.use("/api/users", users);
 app.use("/api/liquids", liquids);
+
+
+
+// add twitter api
+require("dotenv").config();
+const dotenv = require("dotenv");
+const server = require("./routes/api/server.js");
+const helmet = require("helmet");
+const cors = require("cors");
+let ba64 = require("ba64");
+
+
+app.use("/api/server", server);
+app.use(helmet());
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
+app.use(express.json());
+
+
