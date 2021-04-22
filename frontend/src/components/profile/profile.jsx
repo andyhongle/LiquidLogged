@@ -6,7 +6,7 @@ import './profile.css';
 
 export default function Profile() {
 
-  const currentUserId = useRef("");
+//   const currentUserId = useRef("");
   const allLiquids = useRef([]);
  
   let currentDate = new Date();
@@ -23,17 +23,23 @@ export default function Profile() {
   
 
   useEffect(() => {
-    // axios.get(`api/users/current`)
-    //   .then((res) => {
-    //     axios.get(`/api/liquids/user/${res.id}`)
-    //       .then((res) => allLiquids.current = res)
-    //       .catch((err) => console.log(err))
-    //   })
-    //   .catch((err) => console.log(err));
+    axios.get(`api/users/current`)
+      .then((res) => {
+        console.log(res);
+        axios.get(`/api//user/${res.data.id}`)
+          .then((res) => {
+              allLiquids.current = res.data;
+              console.log(res);
+            })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log("dumdumdum"));
   }, [])
   
   useEffect(() => {
-    allLiquids.current = [
+      console.log(allLiquids);
+    allLiquids.current = 
+    [
       {user: 123532432, type: "water", amount: 300, datetime: new Date(2021,3,18)},
       {user: 535953328, type: "water", amount: 100, datetime: new Date(2021,2,19)},
       {user: 494837383, type: "milk", amount: 1000, datetime: new Date(2021,2,19)},
@@ -42,8 +48,8 @@ export default function Profile() {
       {user: 945837839, type: "beer", amount: 1000, datetime: new Date(2021,3,1)},
       {user: 843847393, type: "energy", amount: 500, datetime: new Date(2021,2,18)},
       {user: 843847393, type: "juice", amount: 500, datetime: new Date(2021,2,18)}
-
-    ].sort((a,b) => a.datetime.getTime() > b.datetime.getTime() ? 1 : -1);
+    ]
+    .sort((a,b) => a.datetime.getTime() > b.datetime.getTime() ? 1 : -1);
     // console.log(allLiquids.current);
     // allLiquids.current.forEach((liquid) => {
     //     const earliestDateArr = earliestDate.split("-");
