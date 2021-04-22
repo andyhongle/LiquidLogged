@@ -45,9 +45,8 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
         </div>
       </form>
       <div className="error-section">
-        {errors.map(err => {return err})}
+        {errors}
       </div>
     </div>
-    
   )
 }
