@@ -17,7 +17,7 @@ const ProfileTimeSeries = ({filteredLiquids}) => {
     }   
     
     const datesArr = Object.entries(liquids);
-    console.log(datesArr);
+    // console.log(datesArr);
     const liquidDates = datesArr.map(date => date[0]);
     const liquidAmounts = datesArr.map(date => date[1]);
     const data = {
