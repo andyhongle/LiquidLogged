@@ -1,8 +1,49 @@
 import React from 'react'
-import domtoimage from 'dom-to-image'
+import domtoimage from "dom-to-image";
 import { saveAs } from 'file-saver';
+import axios from "axios";
 
 export default function Cup({dailyAmount, goal}) {
+
+    //  function openTwitterUrl(twitterUrl) {
+    //     const width = 575;
+    //     const height = 400;
+    //     const left = (window.outerWidth - width) / 2;
+    //     const top = (window.outerHeight - height) / 2;
+    //     const opts = 
+    //     `status=1,width=${width},height=${height},top=${top},left=${left}`;
+    //         window.open(twitterUrl, "twitter", opts);
+    // }
+
+    const handleShare = () => {
+        let node = document.getElementById("cup");
+        domtoimage.toBlob(node).then((blob) => {
+            saveAs(blob, 'mycup.png')
+        })
+
+        // domtoimage
+        // .toPng(node)
+        // .then(dataUrl => {
+        //     axios
+        //     .post(
+        //         "/api/server/imagetotweet",
+        //         {dataUrl: dataUrl}
+        //     )
+        //     .then(res => {
+        //         const url = "";
+        //         const via = "";
+        //         const title = res.data.message;
+        //         const hashtags = "test liquid tracker";
+        //         const twitterURL = 
+        //         `https://twitter.com/shareurl=${url}&text=${title}&via=${via}
+        //         &hashtags=${hashtags}`;
+        //         openTwitterUrl(twitterURL);
+        //     })
+        //     .catch(err => console.log(err, "Error trying to tweet"))
+        // })
+        // .catch(err => console.log(err));
+  };
+
     let message = 
         dailyAmount < goal / 4 ? "Come on! Water is the source of life" :  
                             (dailyAmount < goal / 2 ? "Awesome! Almost Halfway!" : 
@@ -12,12 +53,16 @@ export default function Cup({dailyAmount, goal}) {
     return (
         
         <div className="cup-section">
-        <div className="message">{message}</div>
-            <div className="cup">
-                 <div style={{height: dailyAmount / goal * 300}} className="level"></div>
-                 <div className="straw"></div>
-                 <div className="straw-head"> </div>
+            <div className="message">{message}</div>
+            <div id="cup">
+                    <div style={{height: dailyAmount / goal * 300}} className="level"></div>
+                    <div className="straw"></div>
+                    <div className="straw-head"> </div>
             </div>
+            <button className="save-cup-button" onClick={handleShare}>
+                Save My Cup
+            </button>
         </div>
+        
     )
 }
