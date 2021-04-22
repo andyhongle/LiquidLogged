@@ -2,24 +2,41 @@ import React from "react";
 import "./Splash.css";
 
 function Splash() {
-
   return (
     <div className="splash-container">
       <div className="main-container">
-        <h1 className="title">Liquid Logged</h1>
+        <h1 className="title">LiquidLogged</h1>
         <p className="description">
-          Liquid Logged is a liquid consumption tracking app that logs a user's
+          LiquidLogged is a liquid consumption tracking app that logs a user's
           drinking habits. Users record the type of drink and amount consumed
           and receive a detailed drinking pattern breakdown which can be sorted
           by day, week, or month.
         </p>
+        {/* <nav className="nav-start">
+          <ul>
+            <li className="start-button">
+              Get Started
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </li>
+          </ul>
+        </nav> */}
       </div>
+
       <div className="splash-pictures">
         <div className="splash-pic">
-          <img src="https://puu.sh/HA9k8/2e996773fc.png"></img>
+          <div className="top-splash-pic">
+            <div className="pic-text">Users simply add their liquids for the day</div>
+            <img src="https://i.imgur.com/HkcccPH.png"></img>
+          </div>
         </div>
         <div className="splash-pic">
-          <img src="https://puu.sh/HA9k8/2e996773fc.png"></img>
+          <div className="bottom-splash-pic">
+            <img src="https://i.imgur.com/HkcccPH.png"></img>
+            <div className="pic-text"> And receive a complete breakdown of all liquids consumed </div>
+          </div>
         </div>
       </div>
       <div className="about-container">
@@ -31,26 +48,26 @@ function Splash() {
               src="https://puu.sh/HAhMl/fe262e6fd9.png"
               className="profile-picture"
             ></img>
-
-            <a href="#" className="linked-container">
-              <img
-                src="https://puu.sh/HAhCs/9a89eb922a.png"
-                className="icon"
-              ></img>
-              <div className="icon-text">LinkedIn</div>
-            </a>
-            <a
-              href="https://github.com/andyhongle"
-              className="github-container"
-            >
-              <img
-                src="https://puu.sh/HAhHn/48d0e044c5.png"
-                className="icon"
-              ></img>
-              <div className="icon-text">Github</div>
-            </a>
+            <div className="contact">
+              <a href="#" className="linked-container">
+                <img
+                  src="https://i.imgur.com/jCC5zF3.png"
+                  className="icon"
+                ></img>
+                {/* <div className="icon-text">LinkedIn</div> */}
+              </a>
+              <a
+                href="https://github.com/andyhongle"
+                className="github-container"
+              >
+                <img
+                  src="https://puu.sh/HAhHn/48d0e044c5.png"
+                  className="icon"
+                ></img>
+                {/* <div className="icon-text">Github</div> */}
+              </a>
+            </div>
           </div>
-
           <div className="profile-container">
             <div className="profile-name">Alex Zhou</div>
             <img
@@ -58,23 +75,29 @@ function Splash() {
               className="profile-picture"
             ></img>
 
-            <a href="#" className="linked-container">
-              <img
-                src="https://puu.sh/HAhCs/9a89eb922a.png"
-                className="icon"
-              ></img>
-              <div className="icon-text">LinkedIn</div>
-            </a>
-            <a href="#" className="github-container">
-              <img
-                src="https://puu.sh/HAhHn/48d0e044c5.png"
-                className="icon"
-              ></img>
-              <div className="icon-text">Github</div>
-            </a>
+            <div className="contact">
+              <a
+                href="https://www.linkedin.com/in/alex-zhou-ba3614148/"
+                className="linked-container"
+              >
+                <img
+                  src="https://i.imgur.com/jCC5zF3.png"
+                  className="icon"
+                ></img>
+                {/* <div className="icon-text">LinkedIn</div> */}
+              </a>
+              <a
+                href="https://github.com/alexzhou415"
+                className="github-container"
+              >
+                <img
+                  src="https://puu.sh/HAhHn/48d0e044c5.png"
+                  className="icon"
+                ></img>
+                {/* <div className="icon-text">Github</div> */}
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="about-row">
           <div className="profile-container">
             <div className="profile-name">Lin Yuan</div>
             <img
@@ -82,21 +105,28 @@ function Splash() {
               className="profile-picture"
             ></img>
 
-            <a href="#" className="linked-container">
-              <img
-                src="https://puu.sh/HAhCs/9a89eb922a.png"
-                className="icon"
-              ></img>
-              <div className="icon-text">LinkedIn</div>
-            </a>
-
-            <a href="#" className="github-container">
-              <img
-                src="https://puu.sh/HAhHn/48d0e044c5.png"
-                className="icon"
-              ></img>
-              <div className="icon-text">Github</div>
-            </a>
+            <div className="contact">
+              <a
+                href="https://www.linkedin.com/in/lin-yuan-3a9915154/"
+                className="linked-container"
+              >
+                <img
+                  src="https://i.imgur.com/jCC5zF3.png"
+                  className="icon"
+                ></img>
+                {/* <div className="icon-text">LinkedIn</div> */}
+              </a>
+              <a
+                href="https://github.com/aladdin731"
+                className="github-container"
+              >
+                <img
+                  src="https://puu.sh/HAhHn/48d0e044c5.png"
+                  className="icon"
+                ></img>
+                {/* <div className="icon-text">Github</div> */}
+              </a>
+            </div>
           </div>
           <div className="profile-container">
             <div className="profile-name">Sky Kumtong</div>
@@ -105,21 +135,28 @@ function Splash() {
               className="profile-picture"
             ></img>
 
-            <a href="#" className="linked-container">
-              <img
-                src="https://puu.sh/HAhCs/9a89eb922a.png"
-                className="icon"
-              ></img>
-              <div className="icon-text">LinkedIn</div>
-            </a>
-
-            <a href="#" className="github-container">
-              <img
-                src="https://puu.sh/HAhHn/48d0e044c5.png"
-                className="icon"
-              ></img>
-              <div className="icon-text">Github</div>
-            </a>
+            <div className="contact">
+              <a
+                href="https://www.linkedin.com/in/skykumtong/"
+                className="linked-container"
+              >
+                <img
+                  src="https://i.imgur.com/jCC5zF3.png"
+                  className="icon"
+                ></img>
+                {/* <div className="icon-text">LinkedIn</div> */}
+              </a>
+              <a
+                href="https://github.com/skygit97"
+                className="github-container"
+              >
+                <img
+                  src="https://puu.sh/HAhHn/48d0e044c5.png"
+                  className="icon"
+                ></img>
+                {/* <div className="icon-text">Github</div> */}
+              </a>
+            </div>
           </div>
         </div>
       </div>
