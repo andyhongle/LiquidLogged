@@ -126,6 +126,10 @@
 		cursor: pointer;
 	}
 
+    .link {
+        color: #fff
+    }
+
 	.header-links:hover {
 		background: #fff;
 		color: #242424;
@@ -141,8 +145,9 @@
 	border: 1px solid #fff;
 	cursor: pointer;
 	color: #fff;
-	font-size: 18px;
+	font-size: 1.5rem;
 	margin: 10px;
+    text-decoration: none;
 }
 
 .session-btn:hover {
@@ -151,18 +156,18 @@
 	transition: all 0.3s ease-out;
 }
 
-.logout-btn {
+/* .logout-btn {
 	background-color: transparent;
 	padding: 10px 20px;
 	border-radius: 10px;
 	border: 1px solid #fff;
 	cursor: pointer;
 	color: #fff;
-	font-size: 18px;
-}
+	font-size: 1.5rem;
+} */
 
-.logout-btn:hover {
+/* .logout-btn:hover {
 	background: #fff;
 	color: #242424;
 	transition: all 0.3s ease-out;
-}
+} */
