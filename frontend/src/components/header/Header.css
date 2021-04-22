@@ -6,7 +6,9 @@
 }
 
 .header {
-	background: #8fd6e1;
+	/* background-color: #8FD6E1;
+	background-color: #FCDCDF; */
+	background-color: #ffd31d;
 	height: 80px;
 	display: flex;
 	justify-content: center;
@@ -15,22 +17,23 @@
 	position: sticky;
 	top: 0;
 	z-index: 999;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	
 }
 
 .header-logo {
-	color: #fff;
 	justify-self: start;
 	margin-left: 30px;
 	cursor: pointer;
 	text-decoration: none;
-	font-size: 2rem;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
 	font-size: 50px;
-	font-family: "Norican", cursive;
+	font-family: 'Montserrat', sans-serif;
 	color: white;
-	text-shadow: 0 2px 0 #8ed2d4, 2px 3px 15px rgba(0, 0, 0, 0.5);
+	font-weight: 1000;
 }
 
 .header-menu {

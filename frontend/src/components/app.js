@@ -8,8 +8,18 @@ import Profile from "./profile/profile";
 import Liquids from "../components/liquid/liquids.jsx";
 import Modal from "./modal/modal";
 
-
 const App = () => (
+<<<<<<< HEAD
+  <div>
+    <Modal />
+    <HeaderContainer />
+    <Switch>
+      <AuthRoute exact path="/" component={Splash} />
+      <Route exact path="/liquids" component={Liquids} />
+      <Route exact path="/profile" component={Profile} />
+    </Switch>
+  </div>
+=======
 	<div>
         <Modal />
 		<HeaderContainer />
@@ -20,5 +30,6 @@ const App = () => (
 		</Switch>
 		<Footer />
 	</div>
+>>>>>>> main
 );
 export default App;

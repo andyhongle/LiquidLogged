@@ -15,7 +15,11 @@ class LoginForm extends React.Component {
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.toggleShow = this.toggleShow.bind(this);
+<<<<<<< HEAD
+
+=======
 		this.handleDemo = this.handleDemo.bind(this);
+>>>>>>> main
 		this.renderErrors = this.renderErrors.bind(this);
 	}
 
@@ -67,13 +71,26 @@ class LoginForm extends React.Component {
 		return (
 			<ul>
 				{Object.keys(this.state.errors).map((error, i) => (
+<<<<<<< HEAD
+					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+=======
 					<li className="errors" key={`error-${i}`}>
 						{this.state.errors[error]}
 					</li>
+>>>>>>> main
 				))}
 			</ul>
 		);
 	}
+	// renderErrors() {
+	// 	return (
+	// 		<ul>
+	// 			{this.props.errors.map((error, i) => (
+	// 				<li key={`error-${i}`}>{error}</li>
+	// 			))}
+	// 		</ul>
+	// 	);
+	// }
 
 	render() {
 		return (
