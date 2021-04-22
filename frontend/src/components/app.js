@@ -3,7 +3,6 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Switch, Route } from "react-router-dom";
 import HeaderContainer from "./header/header_container";
 import Splash from "./splash/Splash";
-import Footer from "./footer/Footer";
 import Profile from "./profile/profile";
 import Liquids from "../components/liquid/liquids.jsx";
 import Modal from "./modal/modal";
