@@ -56,7 +56,7 @@ export default function Liquids() {
             <br></br>
             <form className="liquid-form" onSubmit={setGoalAmount}>
                 <div className="form-inner" >
-                    <input className="liquid-input" type="number" name="goalAmount" id="goalAmount" placeholder="goalAmount" ref={goalAmount}/>
+                    <input className="liquid-input" type="number" name="goalAmount" id="goalAmount" placeholder="Goal Amount" ref={goalAmount}/>
                     <input className="liquid-input" type="submit" value="Set Daily Goal" />
                 </div>
             </form>

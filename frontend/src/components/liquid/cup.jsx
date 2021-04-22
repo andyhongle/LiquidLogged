@@ -46,11 +46,11 @@ export default function Cup({dailyAmount, goal}) {
     // }
 
     let message = 
-        dailyAmount < goal / 4 ? "Come on! Water is the source of life" :  
-                            (dailyAmount < goal / 2 ? "Awesome! Almost Halfway!" : 
-                            (dailyAmount < goal / 4 * 3 ? "Excellent! Get more!" : 
-                            (dailyAmount < goal ? "Almost! Amost!" : 
-                            (dailyAmount === goal ? "Achieved!!!" : "Ohh~ That's too much!"))) )
+        dailyAmount < goal / 4 ? "Water you doing. Drink More!" :  
+                            (dailyAmount < goal / 2 ? "Awesome! The glass is half full" : 
+                            (dailyAmount < goal / 4 * 3 ? "Excellent! Drink more!" : 
+                            (dailyAmount < goal ? "Almost! Almost!" : 
+                            (dailyAmount === goal ? "Goal Achieved!!! Good Job!" : "California is in a drought. Save some for the fishes!"))) )
     return (
         
         <div className="cup-section">
