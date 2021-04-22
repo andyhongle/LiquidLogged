@@ -5,19 +5,10 @@ import axios from "axios";
 
 export default function Cup({dailyAmount, goal}) {
 
-    //  function openTwitterUrl(twitterUrl) {
-    //     const width = 575;
-    //     const height = 400;
-    //     const left = (window.outerWidth - width) / 2;
-    //     const top = (window.outerHeight - height) / 2;
-    //     const opts = 
-    //     `status=1,width=${width},height=${height},top=${top},left=${left}`;
-    //         window.open(twitterUrl, "twitter", opts);
-    // }
 
     const handleShare = () => {
         let node = document.getElementById("cup");
-        domtoimage.toBlob(node).then((blob) => {
+        domtoimage.toBlob(node, {height:'400', width:'200'}).then((blob) => {
             saveAs(blob, 'mycup.png')
         })
 
@@ -30,8 +21,8 @@ export default function Cup({dailyAmount, goal}) {
         //         {dataUrl: dataUrl}
         //     )
         //     .then(res => {
-        //         const url = "";
-        //         const via = "";
+        //         const url = "https://twitter.com/LinYuan731";
+        //         const via = "Lin";
         //         const title = res.data.message;
         //         const hashtags = "test liquid tracker";
         //         const twitterURL = 
@@ -43,6 +34,16 @@ export default function Cup({dailyAmount, goal}) {
         // })
         // .catch(err => console.log(err));
   };
+
+    //  function openTwitterUrl(twitterUrl) {
+    //     const width = 575;
+    //     const height = 400;
+    //     const left = (window.outerWidth - width) / 2;
+    //     const top = (window.outerHeight - height) / 2;
+    //     const opts = 
+    //     `status=1,width=${width},height=${height},top=${top},left=${left}`;
+    //         window.open(twitterUrl, "twitter", opts);
+    // }
 
     let message = 
         dailyAmount < goal / 4 ? "Come on! Water is the source of life" :  
