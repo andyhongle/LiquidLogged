@@ -34,6 +34,7 @@ const ProfileTimeSeries = ({filteredLiquids}) => {
     };
 
     const options = {
+      maintainAspectRatio: true,
       scales: {
         y: {
           min: 0,
@@ -58,9 +59,9 @@ const ProfileTimeSeries = ({filteredLiquids}) => {
     return (
       <div className="time-series-container">
         <div className="time-series-header">
-          <h2 className="title">Your Liquid Intake Over Time</h2>
+          <h2 className="time-series-title">Liquid Intake Over Time</h2>
         </div>
-        <Line data={data} options={options} />
+        <Line classname="line-graph" data={data} options={options} />
       </div>
     );
  

@@ -1,7 +1,81 @@
-.donut-container {
-    width: 40%;
+.profile-data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: .5rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #F8F8F8;
+}
+
+.profile-data-container h2 {
+    color: #888;
+}
+
+.profile-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.profile-dates {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 330px;
+}
+
+.profile-from, .profile-to {
+    text-align: center;
+}
+
+.profile-from input, .profile-to input {
+    margin-top: 6px;
+}
+
+.profile-graphs {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .time-series-container {
-    width: 40%;
+    width: 55%;
+    position: relative;
+    left: 70px;
+    margin-right: 20px;
+}
+
+.time-series-container canvas {
+    width: 100% !important;
+}
+
+.donut-container {
+    width: 30%;
+}
+
+.time-series-header, .donut-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field {
+    color: black;
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field {
+    color: black;
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field {
+    color: black;
 }
