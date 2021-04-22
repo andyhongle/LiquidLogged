@@ -1,4 +1,5 @@
 import React from 'react'
+import domtoimage from 'dom-to-image'
 
 export default function Cup({dailyAmount, goal}) {
     let message = 

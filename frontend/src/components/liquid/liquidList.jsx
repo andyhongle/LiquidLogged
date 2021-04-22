@@ -1,28 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react'
 import LiquidItem from './liquidItem'
 import axios from 'axios';
 
+
 export default function LiquidList({liquids, setLiquids}) {
 
+
     const removeLiquid = id => {
-        let temp = liquids.filter(liquid => liquid.id !== id);
-        setLiquids(temp);
-        // axios.delete('api/liquids/'+id)
-        //     .then(res => console.log(res.data))
-        //     .catch((error) => {console.log(error)});
+
+        axios.delete(`/api/liquids/${id}`)
+            .then(res => {
+                console.log(res.data);
+                let liquidToBeDeleted = res.data;
+                let temp = liquids.filter(liquid => liquid._id !== liquidToBeDeleted._id);
+                setLiquids(temp);
+            })
+            .catch((error) => console.log(error.response.data));
     }
 
-
-    const sortByDate = (a, b) => {
-        return a.datetime - b.datetime;
-    }
 
     return (
         <div className="liquid-list">
         <table>
             <tbody>
                 {
-                    liquids.sort(sortByDate).map((liquid, index) => (
+                    liquids.map((liquid, index) => (
                     <LiquidItem 
                         key={index} 
                         liquid={liquid} 
