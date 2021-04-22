@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
 import ProfileDonut from './profile_donut';
 import ProfileTimeSeries from './profile_time_series';
+import './profile.css';
 
 export default function Profile() {
 
@@ -14,6 +15,7 @@ export default function Profile() {
   const year = currentDate.getFullYear();
   currentDate = year + "-" + month + "-" + day;
 
+  const latestDate = useRef(new Date());
   const earliestDate = useRef(currentDate);
   const [startDate, setStartDate] = useState(currentDate);
   const [endDate, setEndDate] = useState(currentDate);
@@ -38,7 +40,8 @@ export default function Profile() {
       {user: 838437429, type: "beer", amount: 500, datetime: new Date(2021,1,28)},
       {user: 484737329, type: "yogurt", amount: 400, datetime: new Date(2021,1,18)}, 
       {user: 945837839, type: "beer", amount: 1000, datetime: new Date(2021,3,1)},
-      {user: 843847393, type: "energy", amount: 500, datetime: new Date(2021,2,18)}
+      {user: 843847393, type: "energy", amount: 500, datetime: new Date(2021,2,18)},
+      {user: 843847393, type: "juice", amount: 500, datetime: new Date(2021,2,18)}
 
     ].sort((a,b) => a.datetime.getTime() > b.datetime.getTime() ? 1 : -1);
     // console.log(allLiquids.current);
@@ -56,12 +59,22 @@ export default function Profile() {
     //     } else setEarliestDate(earliestDateArr[0] + "-" + earliestDateArr[1] + "-" + earliestDateArr[2]);
     // });
     setFilter(allLiquids.current);
+
     const startDay = String(allLiquids.current[0].datetime.getDate()).padStart(2, "0");
     const startMonth = String(allLiquids.current[0].datetime.getMonth() + 1).padStart(2, "0");
     const startYear = allLiquids.current[0].datetime.getFullYear();
     const initialStartDate = startYear + "-" + startMonth + "-" + startDay;
+
+    const endDay = String(allLiquids.current[allLiquids.current.length-1].datetime.getDate()).padStart(2, "0");
+    const endMonth = String(allLiquids.current[allLiquids.current.length-1].datetime.getMonth() + 1).padStart(2, "0");
+    const endYear = allLiquids.current[allLiquids.current.length-1].datetime.getFullYear();
+    const initialEndDate = endYear + "-" + endMonth + "-" + endDay;
+
     earliestDate.current = initialStartDate;
+    console.log(initialEndDate);
+    latestDate.current = initialEndDate;
     setStartDate(initialStartDate);
+    setEndDate(initialEndDate);
   }, [])
 
   function handleDateChange(type) {
@@ -79,7 +92,7 @@ export default function Profile() {
                 const endDateArr = endDate.split("-");
                 const startDateTime = new Date(parseInt(startDateArr[0]), parseInt(startDateArr[1])-1, parseInt(startDateArr[2])).getTime();
                 const endDateTime = new Date(parseInt(endDateArr[0]), parseInt(endDateArr[1])-1, parseInt(endDateArr[2])).getTime();
-                if (date.getTime() >= startDateTime && date.getTime() <= endDateTime) return liquid;
+                return date.getTime() >= startDateTime && date.getTime() <= endDateTime;
                 })
             );
         } else {
@@ -95,7 +108,7 @@ export default function Profile() {
                 const endDateArr = newDate.split("-");
                 const startDateTime = new Date(parseInt(startDateArr[0]), parseInt(startDateArr[1])-1, parseInt(startDateArr[2])).getTime();
                 const endDateTime = new Date(parseInt(endDateArr[0]), parseInt(endDateArr[1])-1, parseInt(endDateArr[2])).getTime();
-                if (date.getTime() >= startDateTime && date.getTime() <= endDateTime) return liquid;
+                return date.getTime() >= startDateTime && date.getTime() <= endDateTime;
                 })
             );
         }
@@ -104,11 +117,11 @@ export default function Profile() {
 
   
   
-  console.log(filteredLiquids);
+//   console.log(latestDate.current);
 
   return (
     <div>
-      <h2 className="profile-header"> Profile</h2>
+      <h2 className="profile-header">Liquid Profile</h2>
 
       <label className="profile-from">
         From
@@ -120,6 +133,7 @@ export default function Profile() {
           max={endDate}
         />
       </label>
+      
       <label className="profile-to">
         To
         <input
@@ -127,12 +141,12 @@ export default function Profile() {
           onChange={handleDateChange("end")}
           value={endDate}
           min={startDate}
-          max={currentDate}
+          max={latestDate.current}
         />
       </label>
       <div className="profile-graphs">
-        <ProfileDonut props={filteredLiquids}/>
-        <ProfileTimeSeries props={filteredLiquids} />
+        <ProfileDonut filteredLiquids={filteredLiquids}/>
+        <ProfileTimeSeries filteredLiquids={filteredLiquids} />
       </div>
     </div>
   );
