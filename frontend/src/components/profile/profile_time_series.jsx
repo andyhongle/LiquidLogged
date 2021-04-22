@@ -6,18 +6,26 @@ const ProfileTimeSeries = ({filteredLiquids}) => {
     const liquids = {};
     if (filteredLiquids[0]) {
       filteredLiquids.forEach((liquid) => {
-        const liquidDate = '';
+        const startDay = String(liquid.datetime.getDate()).padStart(2, "0");
+        const startMonth = String((liquid.datetime.getMonth() + 1)).padStart(2, "0");
+        const startYear = liquid.datetime.getFullYear();
+        const liquidDate = startMonth + "-" + startDay + "-" + startYear;
         if (!Object.keys(liquids).includes(liquidDate))
           liquids[liquidDate] = liquid.amount;
         else liquids[liquidDate] += liquid.amount;
       });
     }   
+    
+    const datesArr = Object.entries(liquids);
+    console.log(datesArr);
+    const liquidDates = datesArr.map(date => date[0]);
+    const liquidAmounts = datesArr.map(date => date[1]);
     const data = {
-      labels: ["1", "2", "3", "4", "5", "6"],
+      labels: liquidDates,
       datasets: [
         {
           label: "Liquids Logged",
-          data: [12, 60, 3, 5, 2, 3],
+          data: liquidAmounts,
           fill: true,
           backgroundColor: "rgb(105, 255, 255)",
           borderColor: "rgba(105, 255, 255, 0.2)",
@@ -28,9 +36,7 @@ const ProfileTimeSeries = ({filteredLiquids}) => {
     const options = {
       scales: {
         y: {
-          // ticks: {
-          //   beginAtZero: true,
-          // },
+          min: 0,
           title: {
             display: true,
             text: "Daily Liquid Intake",
@@ -43,7 +49,7 @@ const ProfileTimeSeries = ({filteredLiquids}) => {
           // },
           title: {
             display: true,
-            text: "Dates Tracked",
+            text: "Days Tracked",
             color: "black",
           },
         },

@@ -71,7 +71,6 @@ export default function Profile() {
     const initialEndDate = endYear + "-" + endMonth + "-" + endDay;
 
     earliestDate.current = initialStartDate;
-    console.log(initialEndDate);
     latestDate.current = initialEndDate;
     setStartDate(initialStartDate);
     setEndDate(initialEndDate);

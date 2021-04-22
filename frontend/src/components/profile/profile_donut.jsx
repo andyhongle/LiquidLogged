@@ -2,7 +2,6 @@ import React from 'react';
 import { Doughnut } from "react-chartjs-2";
 
 const ProfileDonut = ({filteredLiquids}) => {
-    console.log(filteredLiquids);
     const liquids = {};
     if (filteredLiquids[0]){
         filteredLiquids.forEach((liquid) => {
@@ -14,7 +13,6 @@ const ProfileDonut = ({filteredLiquids}) => {
     let liquidsArr = Object.entries(liquids).sort((a,b) => a[1] < b[1] ? 1 : -1);
     
     const numTypes = liquidsArr.length;
-    console.log(numTypes);
     if (numTypes > 6) {
         const otherTypes = liquidsArr.slice(6);
         liquidsArr = liquidsArr.slice(0,6);
@@ -24,9 +22,6 @@ const ProfileDonut = ({filteredLiquids}) => {
     }
     const liquidLabels = liquidsArr.map((liquid) => liquid[0]);
     const liquidAmounts = liquidsArr.map(liquid => liquid[1]);
-    console.log(liquidsArr);
-    console.log(liquidLabels);
-    console.log(liquidAmounts);
     const data = {
       labels: liquidLabels,
       datasets: [
