@@ -22,16 +22,22 @@
   },
   "homepage": "https://github.com/andyhongle/MyLiquids#readme",
   "dependencies": {
+    "ba64": "^3.0.9",
     "bcryptjs": "^2.4.3",
     "concurrently": "^6.0.2",
+    "cors": "^2.8.5",
     "dom-to-image": "^2.6.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "file-saver": "^2.0.5",
+    "helmet": "^4.5.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mongoose": "^5.12.4",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-router-dom": "^5.2.0",
+    "twitter": "^1.7.1",
     "validator": "^13.5.2"
   },
   "devDependencies": {

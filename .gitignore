@@ -2,4 +2,6 @@ node_modules
 keys_dev.js
 /config/keys.js
 
+.env
+
 
