@@ -1,5 +1,6 @@
 import React from 'react'
 import domtoimage from 'dom-to-image'
+import { saveAs } from 'file-saver';
 
 export default function Cup({dailyAmount, goal}) {
     let message = 

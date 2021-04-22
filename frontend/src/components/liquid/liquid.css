@@ -176,6 +176,7 @@
 	border-radius: 8px 0px 0px 8px;
 	transition: 0.5s;
 	font-size: large;
+	border: none;
 }
 
 .liquid-list .liquid-item:hover .remove-liquid {
