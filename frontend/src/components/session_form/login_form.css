@@ -1,0 +1,83 @@
+.login-form-container {
+	background: #8fd6e1;
+	border: 1px solid #42464b;
+	height: 400px;
+	margin: 20px;
+	width: 400px;
+	margin-top: -10px;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.login-form-container input {
+	background: white;
+	border-radius: 10px;
+	border: 1px solid #a1a3a3;
+	box-shadow: 0 1px #fff;
+	box-sizing: border-box;
+	color: black;
+	height: 50px;
+	margin: 6px 20px 0 25px;
+	padding-left: 10px;
+	width: 350px;
+    font-size: 20px;
+    box-shadow: 0 0 3px #1670BE;
+    outline: none
+}
+
+
+.login-form-container button {
+	background-color: transparent;
+	padding: 10px 20px;
+	border-radius: 10px;
+	outline: none;
+	border: 2px solid #fff;
+	cursor: pointer;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 6px 20px 0 25px;
+	width: 350px;
+}
+
+.login-form-container button:hover {
+	background: #fff;
+	color: #242424;
+	transition: all 0.3s ease-out;
+}
+
+.login-form-container > .fa-times {
+	color: white;
+	font-size: 2rem;
+	position: absolute;
+	top: 5px;
+	right: 10%;
+	cursor: pointer;
+}
+
+.eye-icon {
+  float: right;
+  margin-top: -35px;
+  right: 40px;
+  position: relative;
+  z-index: 9999;
+  cursor:pointer;
+}
+
+.fa-eye, .fa-eye-slash {
+  color: rgb(156, 156, 156);
+}
+
+.login-form-container .errors {
+	color: red;
+	font-size: 16px;
+	display: flex;
+	width: 100%;
+	padding-top: 15px;
+	margin-left: 7%;
+	list-style-type: none;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}

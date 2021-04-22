@@ -3,7 +3,7 @@ export const deleteLiquid = (id) => {
 };
 
 export const writeLiquid = data => {
-    return axios.post('/api/liquids/', data)
+    return axios.post('/api/liquids/create', data)
 }
 
 export const getUserLiquids = id => {

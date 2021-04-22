@@ -3,8 +3,10 @@ const router = express.Router();
 const passport = require('passport');
 const Liquid = require('../../models/Liquid');
 const validateLiquidInput = require('../../validation/liquids');
+const timeElapsed = Date.now()
+const today = new Date(timeElapsed)
+currentDate = today.toISOString().split('T')[0]
 
-router.get("/test", (req, res) => res.json({ msg: "This is the liquids route" }));
 
 // gets all liquids, used for testing
 router.get('/', (req, res) => {
@@ -14,8 +16,16 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ noliquidsfound: 'No liquids found' }));
 });
 
+// fetch all liquids from a user on the current day
+router.get('/user/:user_id/current_date', (req, res) => {
+    Liquid.find({user: req.params.user_id, date: currentDate})
+        .then(liquids => res.json(liquids))
+        .catch(err => res.status(404).json({ noliquidsfound: 'No liquids found' }));
+});
+
+
 // /api/liquids create liquid
-router.post('/', 
+router.post('/create', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const { errors, isValid } = validateLiquidInput(req.body);
@@ -27,10 +37,10 @@ router.post('/',
         const newLiquid = new Liquid({
             type: req.body.type,
             amount: req.body.amount,
-            user: req.user.id
+            user: req.body.user.id 
         });
 
-        newLiquid.save().then(tweet => res.json(tweet));
+        newLiquid.save().then(liquid => res.json(liquid));
     }
 );
 
