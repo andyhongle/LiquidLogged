@@ -247,5 +247,6 @@ nav ul .start-button span:nth-child(4) {
 .contact {
   display: flex;
   justify-content: space-around;  
+  margin-bottom: 100px;
 }
 
