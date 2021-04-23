@@ -26,6 +26,7 @@
     border-top-right-radius: 8px;
 	margin-top: 50px;
 	margin-bottom: 20px;
+	position: relative;
 }
 
 .daily-amount-title{
@@ -45,6 +46,26 @@
 	border-radius: 8px;
     color:#888;
 	margin-right:8%;
+}
+
+.message {
+	max-width:300px;
+	transition: 2s;
+	position: absolute;
+	bottom: -150%;
+	right:10%;
+	font-weight: 600;
+	padding:5px;
+	background-color: #f8615a;
+	box-shadow: 0 0 4px 8px;
+	color:#edf798;
+	border-radius: .5rem;
+	z-index: 6;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.message:hover {
+	animation: shake 1s infinite;
 }
 
 .main-section{
@@ -228,7 +249,9 @@ td {
 	height:300px;
 	width: 200px;
 	border-radius: 0 0 30px 30px;
-	border: 6px solid #d5ecc2; 
+	border-left: 6px solid #d5ecc2; 
+	border-right: 6px solid #d5ecc2;
+	border-bottom: 6px solid #d5ecc2;
 	box-shadow: 
 	/* bottom */
 	0 4px 0px 0px white, 
@@ -339,23 +362,12 @@ td {
 	transform: rotate(-60deg);
 }
 
-.message {
-	transition: 2s;
-	position: absolute;
-	top: 5%;
-	left:10%;
-	right:10%;
-	font-weight: 600;
-	padding:5px;
-	background-color: #f8615a;
-	box-shadow: 0 0 4px 8px;
-	color:#edf798;
-	border-radius: .5rem;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
 
-.message:hover {
-	animation: shake 1s infinite;
+
+.buttons{
+	display: flex;
+	justify-content: space-around;
+	/* margin-top: 2%; */
 }
 
 
@@ -374,9 +386,51 @@ td {
 	position: absolute;
 	bottom: 2%;
 	padding:5px;
+	left:20%;
 }
 
 .save-cup-button:hover {
+	background-position: 100%;
+	color: #FFF;
+}
+
+
+.public-button {
+	border-radius: 8px;
+	background-image: linear-gradient(to right, #FFCE00 50%, #43e7df);
+	background-size: 200%;
+	background-position: 0%;
+	cursor: pointer;
+	color: #313131;
+	font-weight: 200;
+	text-transform: uppercase;
+	transition: 0.3s;
+	border: none;
+	outline: none;
+	position: absolute;
+	bottom: 2%;
+	padding:5px;
+	left:55%;
+	/* tooltip */
+}
+
+.public-button:hover::before,
+.public-button:hover::after {
+	position: absolute;
+	top: -.25rem;
+	left:80%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.public-button:hover::after{
+	content: attr(data-tooltip);
+	height:25px;
+	width:25px;
+	color: black;
+	background-position: 100%;
+}
+
+.public-button:hover {
 	background-position: 100%;
 	color: #FFF;
 }
