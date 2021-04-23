@@ -125,7 +125,7 @@ class Header extends React.Component {
 			<>
 				<nav className="header">
 					<div>
-						<Link to="/" className="header-logo" onClick={this.handleClick}>
+						<Link to="/" className="header-logo">
 							LiquidLogged
 						</Link>
 					</div>

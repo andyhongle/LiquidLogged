@@ -36,7 +36,7 @@ function Splash() {
         </div>
         <div className="splash-pic">
           <div className="bottom-splash-pic">
-            <img src="https://i.imgur.com/HkcccPH.png"></img>
+            <img src="https://i.imgur.com/kuc4Gmj.png"></img>
             <div className="pic-text">
               {" "}
               And receive a complete breakdown of all liquids consumed{" "}
@@ -136,7 +136,7 @@ function Splash() {
           <div className="profile-container">
             <div className="profile-name">Sky Kumtong</div>
             <img
-              src="https://puu.sh/HAhMl/fe262e6fd9.png"
+              src="https://i.imgur.com/dBxVH7s.jpg"
               className="profile-picture"
             ></img>
 
