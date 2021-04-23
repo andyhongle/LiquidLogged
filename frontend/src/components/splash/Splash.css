@@ -234,16 +234,6 @@ nav ul .start-button span:nth-child(4) {
   cursor: pointer;
 }
 
-.linked-container {
-  /* margin-top: 20px;
-  margin-bottom: 12px; */
-}
-
-.github-container {
-  /* margin-bottom: 200px; */
-
-}
-
 .contact {
   display: flex;
   justify-content: space-around;  

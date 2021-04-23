@@ -28,14 +28,19 @@ function Splash() {
       <div className="splash-pictures">
         <div className="splash-pic">
           <div className="top-splash-pic">
-            <div className="pic-text">Users simply add their liquids for the day</div>
+            <div className="pic-text">
+              Users simply add their liquids for the day
+            </div>
             <img src="https://i.imgur.com/HkcccPH.png"></img>
           </div>
         </div>
         <div className="splash-pic">
           <div className="bottom-splash-pic">
             <img src="https://i.imgur.com/HkcccPH.png"></img>
-            <div className="pic-text"> And receive a complete breakdown of all liquids consumed </div>
+            <div className="pic-text">
+              {" "}
+              And receive a complete breakdown of all liquids consumed{" "}
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +66,7 @@ function Splash() {
                 className="github-container"
               >
                 <img
-                  src="https://puu.sh/HAhHn/48d0e044c5.png"
+                  src="https://i.imgur.com/UmrhMNR.png"
                   className="icon"
                 ></img>
                 {/* <div className="icon-text">Github</div> */}
@@ -71,7 +76,7 @@ function Splash() {
           <div className="profile-container">
             <div className="profile-name">Alex Zhou</div>
             <img
-              src="https://puu.sh/HAhMl/fe262e6fd9.png"
+              src="https://i.imgur.com/SYEPdg4.jpg"
               className="profile-picture"
             ></img>
 
@@ -91,7 +96,7 @@ function Splash() {
                 className="github-container"
               >
                 <img
-                  src="https://puu.sh/HAhHn/48d0e044c5.png"
+                  src="https://i.imgur.com/UmrhMNR.png"
                   className="icon"
                 ></img>
                 {/* <div className="icon-text">Github</div> */}
@@ -121,7 +126,7 @@ function Splash() {
                 className="github-container"
               >
                 <img
-                  src="https://puu.sh/HAhHn/48d0e044c5.png"
+                  src="https://i.imgur.com/UmrhMNR.png"
                   className="icon"
                 ></img>
                 {/* <div className="icon-text">Github</div> */}
@@ -151,7 +156,7 @@ function Splash() {
                 className="github-container"
               >
                 <img
-                  src="https://puu.sh/HAhHn/48d0e044c5.png"
+                  src="https://i.imgur.com/UmrhMNR.png"
                   className="icon"
                 ></img>
                 {/* <div className="icon-text">Github</div> */}
