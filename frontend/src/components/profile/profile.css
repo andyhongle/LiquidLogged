@@ -79,3 +79,22 @@ input[type="date"]::-webkit-datetime-edit-day-field {
 input[type="date"]::-webkit-datetime-edit-year-field {
     color: black;
 }
+
+@media only screen and (max-width: 600px) {
+    .profile-graphs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .time-series-container {
+        width: 90%;
+        position: relative;
+        left: 0px;
+        margin-top: 50px;
+    }   
+
+    .donut-container {
+        width: 80%;
+    }   
+}
