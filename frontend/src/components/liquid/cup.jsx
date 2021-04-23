@@ -7,8 +7,8 @@ export default function Cup({dailyAmount, goal}) {
 
 
     const handleShare = () => {
-        let node = document.getElementById("cup");
-        domtoimage.toBlob(node, {height:'400', width:'200'}).then((blob) => {
+        let node = document.getElementById("test");
+        domtoimage.toBlob(node, {quality: "1", height:'460', width:'350'}).then((blob) => {
             saveAs(blob, 'mycup.png')
         })
 
@@ -45,24 +45,24 @@ export default function Cup({dailyAmount, goal}) {
     //         window.open(twitterUrl, "twitter", opts);
     // }
 
-    let message = 
-        dailyAmount < goal / 4 ? "Water you doing. Drink More!" :  
-                            (dailyAmount < goal / 2 ? "Awesome! The glass is half full" : 
-                            (dailyAmount < goal / 4 * 3 ? "Excellent! Drink more!" : 
-                            (dailyAmount < goal ? "Almost! Almost!" : 
-                            (dailyAmount === goal ? "Goal Achieved!!! Good Job!" : "California is in a drought. Save some for the fishes!"))) )
+
     return (
         
-        <div className="cup-section">
-            <div className="message">{message}</div>
+        <div className="cup-section" id="test">
+
             <div id="cup">
-                    <div style={{height: dailyAmount / goal * 300}} className="level"></div>
-                    <div className="straw"></div>
-                    <div className="straw-head"> </div>
+                <div style={{height: dailyAmount / goal * 300}} className="level"></div>
+                <div className="straw"></div>
+                <div className="straw-head"> </div>
             </div>
-            <button className="save-cup-button" onClick={handleShare}>
-                Save My Cup
-            </button>
+            <div className="buttons">
+                <button className="save-cup-button" onClick={handleShare}>
+                    Save My Cup
+                </button>
+                <button className="public-button" data-tooltip="WIP!">
+                    Public to Twitter 
+                </button>
+            </div>
         </div>
         
     )
