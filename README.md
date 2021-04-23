@@ -7,3 +7,7 @@ https://liquidlogged.herokuapp.com/#/
 * Frontend: React, React Hooks, Redux
 
 ## Features
+
+![Liquids Form](https://i.imgur.com/HkcccPH.png)
+
+![Liquids Graphs](https://i.imgur.com/kuc4Gmj.png)
