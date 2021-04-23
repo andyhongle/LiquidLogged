@@ -106,7 +106,7 @@ function Splash() {
           <div className="profile-container">
             <div className="profile-name">Lin Yuan</div>
             <img
-              src="https://puu.sh/HAhMl/fe262e6fd9.png"
+              src="https://i.imgur.com/zwbqwSs.jpg"
               className="profile-picture"
             ></img>
 
