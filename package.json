@@ -37,6 +37,8 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-router-dom": "^5.2.0",
+    "react-simple-image-slider": "^2.1.0",
+    "react-slideshow-image": "^3.4.6",
     "twitter": "^1.7.1",
     "validator": "^13.5.2"
   },
