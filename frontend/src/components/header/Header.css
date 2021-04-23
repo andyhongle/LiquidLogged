@@ -17,9 +17,8 @@
 	position: sticky;
 	top: 0;
 	z-index: 999;
-	padding-top: 60px;
-	padding-bottom: 60px;
-	
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
 .header-logo {
@@ -30,7 +29,7 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
-	font-size: 50px;
+	font-size: 2.5rem;
 	font-family: 'Montserrat', sans-serif;
 	color: white;
 	font-weight: 1000;
@@ -62,7 +61,7 @@
 	display: none;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1300px) {
 	.headerItems {
 		position: relative;
 	}
@@ -94,7 +93,8 @@
 	.header-logo {
 		position: absolute;
 		top: 0;
-		left: 0;
+		left: -15px;
+		padding-top:13px;
 		transform: translate(10%, 5%);
 	}
 

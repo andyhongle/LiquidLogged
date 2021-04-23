@@ -31,12 +31,17 @@ function Splash() {
             <div className="pic-text">
               Users simply add their liquids for the day
             </div>
-            <img src="https://i.imgur.com/HkcccPH.png"></img>
+            <div className="pic">
+              <img src="https://i.imgur.com/HkcccPH.png"></img>
+            </div>
+            
           </div>
         </div>
         <div className="splash-pic">
           <div className="bottom-splash-pic">
+          <div className="pic">
             <img src="https://i.imgur.com/kuc4Gmj.png"></img>
+          </div>
             <div className="pic-text">
               {" "}
               And receive a complete breakdown of all liquids consumed{" "}

@@ -18,17 +18,18 @@
 .title {
   padding-top: 50px;
   /* color: white; */
-  font-size: 90px;
+  font-size: 3rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
+  padding-bottom: 10px;
 }
 
 .description {
   /* color: white; */
-  font-size: 30px;
+  font-size: 1.5rem;
   width: 60%;
   font-family: 'Montserrat', sans-serif;
-  line-height: 55px;
+  line-height: 1.5;
   padding-top: 15px;
 
 }
@@ -113,55 +114,63 @@ nav ul .start-button span:nth-child(4) {
   align-items: center;
   width: 70%;
   flex-direction: column;
-
+  box-sizing: border-box;
 }
 
 .splash-pic {
   padding-left: 40px;
   padding-right: 40px;
-  padding-top: 70px;
-  padding-bottom: 50px;
-
-
-  /* display: flex;
-  justify-content: flex-start; */
+  padding-top: 40px;
+  padding-bottom: 30px;
 }
 
 .top-splash-pic, .bottom-splash-pic {
+  /* border: 1px solid black; */
   display: flex;
   justify-content: space-around;
-  align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
+  align-items: center;
 }
 
 .top-splash-pic .pic-text {
-  margin-right: 10%;
+  /* margin-right: 5%; */
   margin-left: 5%;
   font-family: 'Montserrat', sans-serif;
-  font-size: 70px;
+  font-size: 1.8rem;
+  /* border: 1px solid black; */
+  width: 30%;
+}
+
+.top-splash-pic .pic {
+  /* margin-right: 5%; */
+  margin-left:10%;
+  width: 100%;
+  height:100%;
 }
 
 .bottom-splash-pic .pic-text {
-  margin-left: 10%;
   margin-right: 5%;
   font-family: 'Montserrat', sans-serif;
-  font-size: 70px;
+  font-size: 1.8rem;
+  /* border: 1px solid black; */
+  width: 30%;
+}
+
+.bottom-splash-pic .pic {
+  margin-left: 0;
+  margin-right:10%;
+  width: 100%;
+  height:100%;
+  border: 1.5px solid black;
+  margin-top:15px;
+  margin-bottom:15px;
 }
 
 .splash-pictures img {
-  width: 70%;
-  
-  /* object-fit: cover; */
+  width: 100%;
 }
 
-.top-splash-pic img {
-  margin-right: 5%;
-}
-
-.bottom-splash-pic img {
-  margin-left: 5%;
-}
 
 .about-container {
   display: flex;
@@ -172,16 +181,19 @@ nav ul .start-button span:nth-child(4) {
 }
 
 .meet-text {
-  font-size: 60px;
+  font-size: 3rem;
   font-family: 'Montserrat', sans-serif;
-  margin-bottom: 80px;
-  margin-top: 40px;
+  margin-bottom: 60px;
+  margin-top: 30px;
   /* color: white; */
 }
 
 .about-row {
   display: flex;
-  margin-top: 50px; 
+  /* margin-top: 50px;  */
+  /* width: 60%;
+  margin-left: 20%;
+  margin-right:20%; */
 }
 
 .profile-container {
@@ -190,6 +202,8 @@ nav ul .start-button span:nth-child(4) {
   align-items: center;
   margin-left: 75px;
   margin-right: 75px;
+  /* border:1px solid black; */
+
 }
 
 .profile-name {
@@ -201,16 +215,16 @@ nav ul .start-button span:nth-child(4) {
 }
 
 .profile-picture {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 2px solid #fff;
     object-fit: cover;
 }
 
 .icon {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   margin-right: 10px;
   margin-left: 10px;
   margin-top: 20px;
