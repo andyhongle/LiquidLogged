@@ -40,7 +40,7 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
       <form className="liquid-form" onSubmit={AddLiquid}>
         <div className="form-inner" >
             <input className="liquid-input" type="text" name="type" id="type" placeholder="Type" ref={type} /> 
-            <input className="liquid-input" type="number" min="1" max="2000" name="amount" id="amount" placeholder="Amount (in mL)" ref={amount}/>
+            <input className="liquid-input" type="number" min="1" max="2000" name="amount" id="amount" placeholder="Amount (ml)" ref={amount}/>
             <input className="liquid-input" type="submit" value="Add Liquid" />
         </div>
       </form>

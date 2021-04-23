@@ -59,7 +59,7 @@ const ProfileTimeSeries = ({filteredLiquids}) => {
     return (
       <div className="time-series-container">
         <div className="time-series-header">
-          <h2 className="time-series-title">Liquid Intake Over Time (in ml)</h2>
+          <h2 className="time-series-title">Liquid Intake Over Time (ml)</h2>
         </div>
         <Line classname="line-graph" data={data} options={options} />
       </div>
