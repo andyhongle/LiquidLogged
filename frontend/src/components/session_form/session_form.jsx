@@ -1,62 +1,46 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
-import "./login_form.css";
+import "./session_form.css";
 
-class LoginForm extends React.Component {
+class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
 			username: "",
 			password: "",
-			errors: {},
+			password2: "",
 			hidden: true,
 		};
-
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.toggleShow = this.toggleShow.bind(this);
 		this.handleDemo = this.handleDemo.bind(this);
-		this.renderErrors = this.renderErrors.bind(this);
+		this.toggleShow = this.toggleShow.bind(this);
 	}
 
-	componentWillReceiveProps(nextProps) {
-		if (nextProps.currentUser === true) {
-			this.props.history.push("/liquids");
+	componentDidMount() {
+		if (this.props.errors.length > 0) {
+			this.props.clearErrors();
 		}
-
-		this.setState({ errors: nextProps.errors });
 	}
 
 	update(field) {
-		return (e) =>
-			this.setState({
-				[field]: e.currentTarget.value,
-			});
+		return (e) => this.setState({ [field]: e.currentTarget.value });
 	}
 
 	handleSubmit(e) {
 		e.preventDefault();
-
-		let user = {
-			username: this.state.username,
-			password: this.state.password,
-		};
-
-        this.props.closeModal();
-		this.props.login(user);
-		this.setState({ errors: "" });
+		let user = Object.assign({}, this.state);
+		this.props.processForm(user).then(() => {
+			this.props.errors.length <= 0 ? this.props.closeModal() : (user = null);
+		});
 	}
 
 	handleDemo(e) {
 		e.preventDefault();
-		let user = {
+		this.props.processDemo({
 			username: "demousername",
 			password: "demopassword",
-		};
-
-        this.props.closeModal();
-		this.props.login(user);
-		this.setState({ errors: "" });
+		});
+		this.props.closeModal();
 	}
 
 	toggleShow() {
@@ -66,9 +50,9 @@ class LoginForm extends React.Component {
 	renderErrors() {
 		return (
 			<ul>
-				{Object.keys(this.state.errors).map((error, i) => (
+				{this.props.errors.map((error, i) => (
 					<li className="errors" key={`error-${i}`}>
-						{this.state.errors[error]}
+						{error}
 					</li>
 				))}
 			</ul>
@@ -76,9 +60,35 @@ class LoginForm extends React.Component {
 	}
 
 	render() {
+		let password2;
+		if (this.props.formType === "Sign Up") {
+			password2 = (
+				<>
+					<input
+						type="password"
+						value={this.state.password2}
+						onChange={this.update("password2")}
+						placeholder="Confirm password"
+					/>
+					<br />
+				</>
+			);
+		}
+
+		let demo;
+		if (this.props.formType === "Log In") {
+			demo = (
+				<button type="submit" value="Submit" onClick={this.handleDemo}>
+					Demo Login
+				</button>
+			);
+		}
+		if (this.props.formType === "Log in") {
+			password2 = null;
+		}
 		return (
-			<div className="login-background">
-				<div className="login-form-container">
+			<div className="session-background">
+				<div className="session-form-container">
 					<i className="fas fa-times" onClick={this.props.closeModal} />
 					<form onSubmit={this.handleSubmit}>
 						<input
@@ -86,7 +96,6 @@ class LoginForm extends React.Component {
 							value={this.state.username}
 							onChange={this.update("username")}
 							placeholder="Username"
-							// required
 						/>
 						<br />
 						<input
@@ -94,7 +103,6 @@ class LoginForm extends React.Component {
 							value={this.state.password}
 							onChange={this.update("password")}
 							placeholder="Password"
-							// required
 						/>
 						<span className="eye-icon">
 							<i
@@ -103,15 +111,14 @@ class LoginForm extends React.Component {
 								onClick={this.toggleShow}
 							></i>
 						</span>
-
 						<br />
+						{password2}
 						<br />
-						<button type="submit" value="Submit">
-							Log In
+						<button type="submit" value="submit">
+							{this.props.formType}
 						</button>
-						<button type="submit" value="Submit" onClick={this.handleDemo}>
-							Demo Login
-						</button>
+						<br />
+						{demo}
 						{this.renderErrors()}
 					</form>
 				</div>
@@ -120,4 +127,4 @@ class LoginForm extends React.Component {
 	}
 }
 
-export default withRouter(LoginForm);
+export default SessionForm;

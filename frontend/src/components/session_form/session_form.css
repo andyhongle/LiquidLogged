@@ -1,4 +1,4 @@
-.signup-form-container {
+.session-form-container {
 	background-color: #ffd31d;
 	border: 1px solid #42464B;
 	height: 400px;
@@ -11,22 +11,22 @@
 	flex-direction: column;
 }
 
-.signup-form-container input {
+.session-form-container input {
 	background: white;
 	border-radius: 10px;
 	border: 1px solid #a1a3a3;
 	box-shadow: 0 1px #fff;
 	box-sizing: border-box;
 	color: black;
-	height: 45px;
+	height: 50px;
 	margin: 6px 20px 0 25px;
 	padding-left: 10px;
 	width: 350px;
-	font-size: 20px;
-	box-shadow: 0 0 3px #1670be;
-	outline: none;
+    font-size: 20px;
+    box-shadow: 0 0 3px #1670BE;
+    outline: none
 }
-.signup-form-container button {
+.session-form-container button {
 	background-color: transparent;
 	padding: 10px 20px;
 	border-radius: 10px;
@@ -36,17 +36,17 @@
 	color: #fff;
 	font-size: 20px;
 	font-weight: bold;
-	margin: 31px 0 0 25px;
+	margin: 6px 20px 0 25px;
 	width: 350px;
 }
 
-.signup-form-container button:hover {
+.session-form-container button:hover {
 	background: #fff;
 	color: #242424;
 	transition: all 0.3s ease-out;
 }
 
-.signup-form-container > .fa-times {
+.session-form-container > .fa-times {
 	color: white;
 	font-size: 2rem;
 	position: absolute;
@@ -55,16 +55,27 @@
 	cursor: pointer;
 }
 
-.signup-form-container .errors {
+.eye-icon {
+  float: right;
+  margin-top: -35px;
+  right: 40px;
+  position: relative;
+  z-index: 9999;
+  cursor:pointer;
+}
+
+.fa-eye, .fa-eye-slash {
+  color: rgb(156, 156, 156);
+}
+
+.session-form-container .errors {
 	color: red;
 	font-size: 16px;
 	display: flex;
 	width: 100%;
 	padding-top: 15px;
 	margin-left: 7%;
-    margin-right: 7%;
 	list-style-type: none;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
-
