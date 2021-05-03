@@ -59,7 +59,7 @@ function Splash() {
               className="profile-picture"
             ></img>
             <div className="contact">
-              <a href="#" className="linked-container">
+              <a href="https://www.linkedin.com/in/andyhongle/" className="linked-container">
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
                   className="icon"
