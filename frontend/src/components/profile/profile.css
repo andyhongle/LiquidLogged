@@ -50,7 +50,7 @@
 .time-series-container {
     width: 55%;
     position: relative;
-    /* left: 70px; */
+    left: 70px;
     margin-right: 20px;
 }
 
