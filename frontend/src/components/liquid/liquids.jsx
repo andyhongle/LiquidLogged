@@ -16,11 +16,11 @@ export default function Liquids() {
     useEffect(() => {
         axios.get("/api/users/current").then(res => {
             setCurrentUser(res.data);
-            console.log(res.data);
+            // console.log(res.data);
             axios.get(`/api/liquids/user/${res.data.id}/current_date`)
                 .then(res => {
                     setLiquids(res.data);
-                    console.log(res.data);
+                    // console.log(res.data);
                 } )
                 .catch((error) => {console.log(error.response.data)})
         })

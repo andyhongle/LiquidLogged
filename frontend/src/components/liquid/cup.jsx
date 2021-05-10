@@ -55,14 +55,9 @@ export default function Cup({dailyAmount, goal}) {
                 <div className="straw"></div>
                 <div className="straw-head"> </div>
             </div>
-            <div className="buttons">
-                <button className="save-cup-button" onClick={handleShare}>
-                    Save My Cup
-                </button>
-                <button className="public-button" data-tooltip="WIP!">
-                    Public to Twitter 
-                </button>
-            </div>
+            <button className="save-cup-button" onClick={handleShare}>
+                Save My Cup
+            </button>
         </div>
         
     )

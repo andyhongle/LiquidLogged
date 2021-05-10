@@ -184,7 +184,7 @@
 
 .liquid-list .liquid-item .remove-liquid {
 	position: absolute;
-	width: 0;
+	width: 25px;
 	top: 0;
 	left: 0px;
 	bottom: 0;
@@ -202,6 +202,7 @@
 
 .liquid-list .liquid-item:hover .remove-liquid {
 	width: 60px;
+	transition: 0.5s;
 }
 
 .liquid-list .liquid-item .type {
@@ -386,7 +387,6 @@ td {
 	position: absolute;
 	bottom: 2%;
 	padding:5px;
-	left:20%;
 }
 
 .save-cup-button:hover {
