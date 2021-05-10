@@ -32,7 +32,7 @@ function Splash() {
               Users simply add their liquids for the day
             </div>
             <div className="pic">
-              <img src="https://i.imgur.com/HkcccPH.png"></img>
+              <img src="https://i.imgur.com/HkcccPH.png" alt='cup'></img>
             </div>
             
           </div>
@@ -40,7 +40,7 @@ function Splash() {
         <div className="splash-pic">
           <div className="bottom-splash-pic">
           <div className="pic">
-            <img src="https://i.imgur.com/kuc4Gmj.png"></img>
+            <img src="https://i.imgur.com/kuc4Gmj.png" alt='graphs'></img>
           </div>
             <div className="pic-text">
               {" "}
@@ -57,12 +57,14 @@ function Splash() {
             <img
               src="https://puu.sh/HAhMl/fe262e6fd9.png"
               className="profile-picture"
+              alt='profile-pic'
             ></img>
             <div className="contact">
               <a href="https://www.linkedin.com/in/andyhongle/" className="linked-container">
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
                   className="icon"
+                  alt='linkedin-icon'
                 ></img>
                 {/* <div className="icon-text">LinkedIn</div> */}
               </a>
@@ -73,6 +75,7 @@ function Splash() {
                 <img
                   src="https://i.imgur.com/UmrhMNR.png"
                   className="icon"
+                  alt='github-icon'
                 ></img>
                 {/* <div className="icon-text">Github</div> */}
               </a>
@@ -83,6 +86,7 @@ function Splash() {
             <img
               src="https://i.imgur.com/SYEPdg4.jpg"
               className="profile-picture"
+              alt='profile-pic'
             ></img>
 
             <div className="contact">
@@ -93,6 +97,7 @@ function Splash() {
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
                   className="icon"
+                  alt='linkedin-icon'
                 ></img>
                 {/* <div className="icon-text">LinkedIn</div> */}
               </a>
@@ -103,6 +108,7 @@ function Splash() {
                 <img
                   src="https://i.imgur.com/UmrhMNR.png"
                   className="icon"
+                  alt='github-icon'
                 ></img>
                 {/* <div className="icon-text">Github</div> */}
               </a>
@@ -113,6 +119,7 @@ function Splash() {
             <img
               src="https://i.imgur.com/zwbqwSs.jpg"
               className="profile-picture"
+              alt='profile-pic'
             ></img>
 
             <div className="contact">
@@ -123,6 +130,7 @@ function Splash() {
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
                   className="icon"
+                  alt='linkedin-icon'
                 ></img>
                 {/* <div className="icon-text">LinkedIn</div> */}
               </a>
@@ -133,6 +141,7 @@ function Splash() {
                 <img
                   src="https://i.imgur.com/UmrhMNR.png"
                   className="icon"
+                  alt='github-icon'
                 ></img>
                 {/* <div className="icon-text">Github</div> */}
               </a>
@@ -143,6 +152,7 @@ function Splash() {
             <img
               src="https://i.imgur.com/dBxVH7s.jpg"
               className="profile-picture"
+              alt=''
             ></img>
 
             <div className="contact">
@@ -153,6 +163,7 @@ function Splash() {
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
                   className="icon"
+                  alt=''
                 ></img>
                 {/* <div className="icon-text">LinkedIn</div> */}
               </a>
@@ -163,6 +174,7 @@ function Splash() {
                 <img
                   src="https://i.imgur.com/UmrhMNR.png"
                   className="icon"
+                  alt=''
                 ></img>
                 {/* <div className="icon-text">Github</div> */}
               </a>
