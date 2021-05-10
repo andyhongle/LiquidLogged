@@ -1,7 +1,7 @@
 import React from 'react'
 import domtoimage from "dom-to-image";
 import { saveAs } from 'file-saver';
-import axios from "axios";
+// import axios from "axios";
 
 export default function Cup({dailyAmount, goal}) {
 

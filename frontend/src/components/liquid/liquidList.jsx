@@ -10,7 +10,7 @@ export default function LiquidList({liquids, setLiquids}) {
 
         axios.delete(`/api/liquids/${id}`)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 let liquidToBeDeleted = res.data;
                 let temp = liquids.filter(liquid => liquid._id !== liquidToBeDeleted._id);
                 setLiquids(temp);

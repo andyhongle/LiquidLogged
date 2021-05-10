@@ -17,7 +17,7 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
 
     axios.post('/api/liquids/create', newLiquid)
         .then(res => {
-          console.log(res);
+          // console.log(res);
           axios.get(`/api/liquids/user/${currentUser.id}/current_date`)
           .then(res => {
             setLiquids(res.data);
@@ -26,7 +26,7 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
         }) 
         .catch(errors => {
           // console.dir returns an object 
-          console.log(errors.response.data.text);
+          // console.log(errors.response.data.text);
           setErrors(errors.response.data.text)
         });
 
