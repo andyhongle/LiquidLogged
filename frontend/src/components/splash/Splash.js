@@ -60,7 +60,7 @@ function Splash() {
               alt='profile-pic'
             ></img>
             <div className="contact">
-              <a href="https://www.linkedin.com/in/andyhongle/" className="linked-container">
+              <a href="https://www.linkedin.com/in/andyhongle/" target="_blank" className="linked-container">
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
                   className="icon"
@@ -69,6 +69,7 @@ function Splash() {
                 {/* <div className="icon-text">LinkedIn</div> */}
               </a>
               <a
+                target="_blank"
                 href="https://github.com/andyhongle"
                 className="github-container"
               >
@@ -92,6 +93,7 @@ function Splash() {
             <div className="contact">
               <a
                 href="https://www.linkedin.com/in/alex-zhou-ba3614148/"
+                target="_blank"
                 className="linked-container"
               >
                 <img
@@ -104,6 +106,7 @@ function Splash() {
               <a
                 href="https://github.com/alexzhou415"
                 className="github-container"
+                target="_blank"
               >
                 <img
                   src="https://i.imgur.com/UmrhMNR.png"
@@ -126,6 +129,7 @@ function Splash() {
               <a
                 href="https://www.linkedin.com/in/lin-yuan-3a9915154/"
                 className="linked-container"
+                target="_blank"
               >
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
@@ -137,6 +141,7 @@ function Splash() {
               <a
                 href="https://github.com/aladdin731"
                 className="github-container"
+                target="_blank"
               >
                 <img
                   src="https://i.imgur.com/UmrhMNR.png"
@@ -159,6 +164,7 @@ function Splash() {
               <a
                 href="https://www.linkedin.com/in/skykumtong/"
                 className="linked-container"
+                target="_blank"
               >
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
@@ -170,6 +176,7 @@ function Splash() {
               <a
                 href="https://github.com/skygit97"
                 className="github-container"
+                target="_blank"
               >
                 <img
                   src="https://i.imgur.com/UmrhMNR.png"
