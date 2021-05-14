@@ -2,7 +2,6 @@ import React from 'react';
 import { Doughnut } from "react-chartjs-2";
 
 const ProfileDonut = ({filteredLiquids}) => {
-    // console.log(filteredLiquids);
     const liquids = {};
     if (filteredLiquids[0]){
         filteredLiquids.forEach((liquid) => {

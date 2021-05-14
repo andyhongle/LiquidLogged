@@ -80,7 +80,7 @@ input[type="date"]::-webkit-datetime-edit-year-field {
     color: black;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .profile-graphs {
         display: flex;
         flex-direction: column;
