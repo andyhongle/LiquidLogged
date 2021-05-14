@@ -48,12 +48,16 @@
 	margin-right:8%;
 }
 
+.right-section {
+	position: relative;
+}
+
 .message {
-	max-width:300px;
+	width:250px;
 	transition: 2s;
 	position: absolute;
-	bottom: -150%;
-	right: 12%;
+	top: 200%;
+	right: -12%;
 	font-weight: 600;
 	padding:5px;
 	background-color: #f8615a;
@@ -67,6 +71,8 @@
 .message:hover {
 	animation: shake 1s infinite;
 }
+
+
 
 .main-section{
     /* background-color: darkgray; */
@@ -146,7 +152,7 @@
 	background-position: 0%;
 	color: #313131;
 	font-weight: 600;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	transition: 0.3s;
 	border: none;
 	outline: none;

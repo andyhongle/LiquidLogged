@@ -13,8 +13,11 @@ export default function DailyAmount({dailyAmount, goal}) {
     return (
         <div className="daily-amount-section">
             <h1 className="daily-amount-title">Daily Amount</h1>
-            <h1 className="daily-amount">{dailyAmount}/{goal}</h1>
-            <h4 className="message">{message}</h4>
+            <div className="right-section">
+                <h1 className="daily-amount">{dailyAmount}/{goal}</h1>
+                <h4 className="message">{message}</h4>
+            </div>
+            
         </div>
     )
 }
