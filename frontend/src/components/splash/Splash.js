@@ -55,7 +55,7 @@ function Splash() {
           <div className="profile-container">
             <div className="profile-name">Andy Le</div>
             <img
-              src="https://i.imgur.com/nvi7asW.jpg"
+              src="https://i.imgur.com/PnLMwfD.jpg"
               className="profile-picture"
               alt='profile-pic'
             ></img>
