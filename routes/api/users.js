@@ -92,7 +92,16 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     });
 })
 
-
+router.patch('/dailygoal', (req, res) => {
+    let id = req.user.id;
+    User.findByIdAndUpdate(id, {dailyGoal: req.body.dailyGoal},
+        (err, result) => {
+            if (err) {
+                return res.status(400).json(err);
+            }
+            res.send('Updated');
+        })
+})
 
 // router.get('/current', (req, res) => {
 //     res.json({
