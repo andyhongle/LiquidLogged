@@ -9,6 +9,10 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    dailyGoal: {
+        type: Number,
+        default: 2000
     }
 }, {
     timestamps: true
