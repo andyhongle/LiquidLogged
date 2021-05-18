@@ -88,12 +88,13 @@ router.post("/login", (req, res) => {
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
         id: req.user.id,
-        username: req.user.username
+        username: req.user.username,
+        dailyGoal: req.user.dailyGoal
     });
 })
 
 router.patch('/dailygoal', (req, res) => {
-    let id = req.user.id;
+    let id = req.body.id;
     User.findByIdAndUpdate(id, {dailyGoal: req.body.dailyGoal},
         (err, result) => {
             if (err) {
