@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const Liquid = require('../../models/Liquid');
 const validateLiquidInput = require('../../validation/liquids');
-const timeElapsed = Date.now()
+const timeElapsed = Date.now() - 7 * 60 * 60 * 1000
 const today = new Date(timeElapsed)
 currentDate = today.toISOString().split('T')[0]
 

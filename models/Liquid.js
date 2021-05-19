@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const timeElapsed = Date.now()
+const timeElapsed = Date.now() - 7 * 60 * 60 * 1000
 const today = new Date(timeElapsed)
 currentDate = today.toISOString().split('T')[0]
+
 const LiquidSchema = new Schema({
 
     user: {
@@ -19,7 +20,7 @@ const LiquidSchema = new Schema({
     },
     datetime: { 
         type: Date,
-        default: Date.now
+        default: () => Date.now() - 7 * 60 * 60 * 1000
     },
     date: { 
         type: String,
