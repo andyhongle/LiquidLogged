@@ -60,7 +60,7 @@ function Splash() {
               alt='profile-pic'
             ></img>
             <div className="contact">
-              <a href="https://www.linkedin.com/in/andyhongle/" target="_blank" className="linked-container">
+              <a href="https://www.linkedin.com/in/andyhongle/" target="_blank" rel='noreferrer' className="linked-container">
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
                   className="icon"
@@ -70,6 +70,7 @@ function Splash() {
               </a>
               <a
                 target="_blank"
+                rel='noreferrer'
                 href="https://github.com/andyhongle"
                 className="github-container"
               >
@@ -95,6 +96,7 @@ function Splash() {
                 href="https://www.linkedin.com/in/alex-zhou-ba3614148/"
                 target="_blank"
                 className="linked-container"
+                rel='noreferrer'
               >
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
@@ -107,6 +109,7 @@ function Splash() {
                 href="https://github.com/alexzhou415"
                 className="github-container"
                 target="_blank"
+                rel='noreferrer'
               >
                 <img
                   src="https://i.imgur.com/UmrhMNR.png"
@@ -130,6 +133,7 @@ function Splash() {
                 href="https://www.linkedin.com/in/lin-yuan-3a9915154/"
                 className="linked-container"
                 target="_blank"
+                rel='noreferrer'
               >
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
@@ -142,6 +146,7 @@ function Splash() {
                 href="https://github.com/aladdin731"
                 className="github-container"
                 target="_blank"
+                rel='noreferrer'
               >
                 <img
                   src="https://i.imgur.com/UmrhMNR.png"
@@ -165,6 +170,7 @@ function Splash() {
                 href="https://www.linkedin.com/in/skykumtong/"
                 className="linked-container"
                 target="_blank"
+                rel='noreferrer'
               >
                 <img
                   src="https://i.imgur.com/jCC5zF3.png"
@@ -177,6 +183,7 @@ function Splash() {
                 href="https://github.com/skygit97"
                 className="github-container"
                 target="_blank"
+                rel='noreferrer'
               >
                 <img
                   src="https://i.imgur.com/UmrhMNR.png"
