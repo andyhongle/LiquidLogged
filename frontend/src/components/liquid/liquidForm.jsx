@@ -6,6 +6,13 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
     const amount = useRef(0);
     const [errors, setErrors] = useState([]);
 
+    // let dailyMax;
+
+    // axios.get("/api/users/current").then(res => {
+    //   dailyMax = res.data.dailyGoal;
+    //   console.log(dailyMax);
+    // })
+
   const AddLiquid = e => {
     e.preventDefault();
 
@@ -34,13 +41,13 @@ export default function LiquidForm({liquids,currentUser, setLiquids}) {
     amount.current.value = "";
   }
 
-  
+    
   return (
     <div>
       <form className="liquid-form" onSubmit={AddLiquid}>
         <div className="form-inner" >
             <input className="liquid-input" type="text" name="type" id="type" placeholder="Type" ref={type} /> 
-            <input className="liquid-input" type="number" min="1" max="2000" name="amount" id="amount" placeholder="Amount (ml)" ref={amount}/>
+            <input className="liquid-input" type="number" min="1" name="amount" id="amount" placeholder="Amount (ml)" ref={amount}/>
             <input className="liquid-input" type="submit" value="Add Liquid" />
         </div>
       </form>
