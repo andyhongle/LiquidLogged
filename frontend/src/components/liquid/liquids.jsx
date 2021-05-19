@@ -17,13 +17,18 @@ export default function Liquids() {
         axios.get("/api/users/current").then(res => {
             setCurrentUser(res.data);
             // console.log(res.data);
+            goalAmount.current.value = res.data.dailyGoal;
+            setGoal(res.data.dailyGoal);
+            // axios.get("/api/users/dailygoal").then(res => console.log(res));
+
             axios.get(`/api/liquids/user/${res.data.id}/current_date`)
                 .then(res => {
                     setLiquids(res.data);
                     // console.log(res.data);
                 } )
                 .catch((error) => {console.log(error.response.data)})
-        })
+        });
+
     }, [])
 
     useEffect(() => {
@@ -34,14 +39,33 @@ export default function Liquids() {
         setDailyAmount(temp);
     }, [liquids]);
 
+    // const goalAmount= useRef(2000);
+    // const [goal, setGoal] = useState(2000);
+
+    // const setGoalAmount = e => {
+    //     e.preventDefault();
+    //     setGoal(Number(goalAmount.current.value));
+    //     goalAmount.current.value = 2000;
+    // }
+
     const goalAmount= useRef(2000);
     const [goal, setGoal] = useState(2000);
-
     const setGoalAmount = e => {
         e.preventDefault();
-        setGoal(Number(goalAmount.current.value));
-        goalAmount.current.value = 2000;
+        // goalAmount.current.value;
+        // console.log(goalAmount.current.value);
+        axios.get('/api/users/current').then(res => {
+          const currentId = res.data.id;
+          axios
+            .patch("/api/users/dailygoal", {
+              dailyGoal: goalAmount.current.value,
+              id: currentId,
+            })
+            .then((res) => setGoal(Number(goalAmount.current.value)));
+        });
+        
     }
+
 
     return (
         <div className="liquids">
